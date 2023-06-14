@@ -1,0 +1,19 @@
+{
+  "title": "逆向调试利器：Frida",
+  "description": "介绍支持Android、iOS等多个平台的通用逆向工具：Frida。",
+  "pluginsConfig": {
+    "github-buttons": {
+      "buttons": [
+        {
+          "repo": "reverse_debug_frida"
+        }
+      ]
+    },
+    "sitemap-general": {
+      "prefix": "https://book.crifan.org/books/reverse_debug_frida/website/"
+    },
+    "toolbar-button": {
+      "url": "https://book.crifan.org/books/reverse_debug_frida/pdf/reverse_debug_frida.pdf"
+    }
+  }
+}
