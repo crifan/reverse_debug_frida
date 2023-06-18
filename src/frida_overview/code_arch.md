@@ -5,8 +5,8 @@
     * client=客户端
       * frida的各种工具
         * [frida](../use_frida/sub_module/frida.md)：frida主体工具本身，用的最多。
-        * [frida-trace](../use_frida/sub_module/frida_trace.md)：按顺序和带缩进的打印所有函数调用堆栈，极大地方便调试内部逻辑
-        * [frida-tools](../use_frida/sub_module/frida_tools.md)：（Win/Mac等）PC端常用到的，除了`frida`之外的，`frida-ls`、`frida-ps`等命令行工具
+        * [frida-tools](../use_frida/sub_module/frida_tools/README.md)：（Win/Mac等）PC端常用到的，除了[frida](../use_frida/sub_module/frida.md)之外的，[frida-trace](../use_frida/sub_module/frida_tools/frida_trace.md)、[frida-ps](../use_frida/sub_module/frida_tools/frida_ps.md)、[frida-ls](../use_frida/sub_module/frida_tools/frida_ls.md)等命令行工具
+          * [frida-trace](../use_frida/sub_module/frida_tools/frida_trace.md)：按顺序和带缩进的打印所有函数调用堆栈，极大地方便调试内部逻辑
     * server=服务端
       * [frida-server](../use_frida/sub_module/frida_server.md)
   * 原理图=架构图

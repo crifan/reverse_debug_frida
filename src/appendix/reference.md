@@ -5,6 +5,19 @@
 * 【未解决】Mac中安装frida
 * 【记录】iOS的iPhone中安装Frida
 * 【记录】Sileo中安装tweak插件：Frida
+* 【已解决】Mac M2 Max中安装Frida环境
+* 【已解决】Mac中升级Frida到最新版本16.0.11
+* 【未解决】Mac中安装frida
+* 【已解决】Mac中升级Frida到新版本16.0.10
+* 【记录】palera1n普通越狱后安装插件：Frida
+* 【规避解决】palera1n的rootless越狱iPhone中初始化frida开发环境
+* 【记录】下载Frida的动态库：FridaGadget.dylib
+* 【记录】iPhone8中的升级frida到最新版16.0.11
+* 【记录】iOS的iPhone中安装Frida
+* 【已解决】确认palera1n的rootful普通越狱中Frida是否可用
+* 【已解决】frida-ios-dump砸壳ipa报错：need Gadget to attach on jailed iOS
+* 
+* [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
 * [Frida CodeShare](https://codeshare.frida.re)
 * [Project: iOS Utils](https://codeshare.frida.re/@lichao890427/ios-utils/)

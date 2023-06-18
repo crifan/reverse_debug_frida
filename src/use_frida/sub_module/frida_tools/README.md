@@ -3,8 +3,8 @@
 `frida-tool`是Frida的一套工具的集合，包括：
 
 * 相对常用的
-  * [frida-trace](https://frida.re/docs/frida-trace/)
-  * [frida-ps](https://frida.re/docs/frida-ps/)
+  * [frida-trace](../../../use_frida/sub_module/frida_tools/frida_trace.md)
+  * [frida-ps](../../../use_frida/sub_module/frida_tools/frida_ps.md)
   * `frida-ls`
 * 不太常用的
   * `frida-apk`
