@@ -10,20 +10,45 @@
 
 ## 用法
 
-* 显示当前PC端进程：不加参数
+* 显示当前**PC端**进程：不加参数
   ```bash
   frida-ps
   ```
-* 显示**USB**连接的（iPhone等）移动端中的（默认显示）所有进程，进程：`-U`
+* 显示**USB**连接的（iPhone等）**移动端**的（默认显示）所有进程，进程：`-U`
   ```bash
   frida-ps -U
   ```
-* 显示**USB**连接的（iPhone等）移动端中的**应用程序**的进程：`-Ua` = `USB` + `only applications`
+* 显示**USB**连接的（iPhone等）**移动端**的**正在运行**的**应用程序**的进程：`-Ua` = `USB` + `only (running) applications`
   ```bash
   frida-ps -Ua
   ```
+* 显示**USB**连接的（iPhone等）**移动端**的**应用程序**的**已安装的**全部（**正在运行**和**没有运行**）的**应用程序**的进程：`-Uai` = `USB` + `only (running) applications` + `(not runnning but) installed`
+  ```bash
+  frida-ps -Uai
+  ```
 
 ## 举例
+
+
+###  frida-ps
+
+```bash
+➜  ~ frida-ps
+PID  Name
+---  ------------------------------------------------------------
+...
+ 1205      weatherd
+  639      wifianalyticsd
+  612      wifip2pd
+  913      wifivelocityd
+11153      wine64-preloader
+...
+11120      wineserver
+  633      writeconfig
+17438      xpcroleaccountd
+...
+94172      zsh
+```
 
 ###  frida-ps -U
 
@@ -85,15 +110,71 @@ PID  Name
 
 ```bash
 ➜  ~ frida-ps -Ua
-  PID  Name    Identifier
-5  ------  ---------------------
-23650
-        微信  com.tencent.xin
-11941
-        日历  com.apple.mobilecal
-19641
-        设置  com.apple.Preferences
+  PID  Name       Identifier
+5  ---------  -----------------------
+27692   Sileo  org.coolstar.SileoStore
+23650   微信     com.tencent.xin
+11941   日历     com.apple.mobilecal
+19641   设置     com.apple.Preferences
 ```
+### frida-ps -Uai
+
+```bash
+➜  ~ frida-ps -Uai
+  PID  Name                 Identifier
+5  -------------------  -------------------------------------
+27692   Sileo            org.coolstar.SileoStore
+23650   微信               com.tencent.xin
+11941   日历               com.apple.mobilecal
+19641   设置               com.apple.Preferences
+    -   App Store        com.apple.AppStore
+    -   Apple Store      com.apple.store.Jolly
+    -   CocoaTop         ru.domo.cocoatop64
+    -   FaceTime通话       com.apple.facetime
+    -   Filza            com.tigisoftware.Filza
+    -   GTA Car Tracker  com.icraze.gtatracker
+    -   Safari浏览器        com.apple.mobilesafari
+    -   Shadowrocket     com.liguangming.Shadowrocket
+    -   ShowSystemInfo   com.crifan.ShowSystemInfo
+    -   Substitute       com.ex.substitute.settings
+    -   TrollStore       com.opa334.TrollStore
+    -   Watch            com.apple.Bridge
+    -   iTunes Store     com.apple.MobileStore
+    -   palera1n         com.llsc12.palera1nLoader
+    -   信息               com.apple.MobileSMS
+    -   健康               com.apple.Health
+    -   反馈               com.apple.appleseed.FeedbackAssistant
+    -   图书               com.apple.iBooks
+    -   地图               com.apple.Maps
+    -   备忘录              com.apple.mobilenotes
+    -   天气               com.apple.weather
+    -   家庭               com.apple.Home
+    -   快捷指令             com.apple.shortcuts
+    -   指南针              com.apple.compass
+    -   提示               com.apple.tips
+    -   提醒事项             com.apple.reminders
+    -   播客               com.apple.podcasts
+    -   放大器              com.apple.Magnifier
+    -   文件               com.apple.DocumentsApp
+    -   时钟               com.apple.mobiletimer
+    -   查找               com.apple.findmy
+    -   测距仪              com.apple.measure
+    -   照片               com.apple.mobileslideshow
+    -   爱思全能版            com.ownbook.notes
+    -   电话               com.apple.mobilephone
+    -   相机               com.apple.camera
+    -   翻译               com.apple.Translate
+    -   股市               com.apple.stocks
+    -   视频               com.apple.tv
+    -   计算器              com.apple.calculator
+    -   语音备忘录            com.apple.VoiceMemos
+    -   通讯录              com.apple.MobileAddressBook
+    -   邮件               com.apple.mobilemail
+    -   钱包               com.apple.Passbook
+    -   音乐               com.apple.Music
+```
+
+![frida_ps_uia_result](../../../assets/img/frida_ps_uia_result.png)
 
 ## 语法help
 

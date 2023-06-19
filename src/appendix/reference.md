@@ -16,6 +16,21 @@
 * 【记录】iOS的iPhone中安装Frida
 * 【已解决】确认palera1n的rootful普通越狱中Frida是否可用
 * 【已解决】frida-ios-dump砸壳ipa报错：need Gadget to attach on jailed iOS
+* 【已解决】frida启动时到底有哪几种attach和spwan启动方式
+* 【整理】再次研究确认Frida调试目标的几种方式
+* 【已解决】iOS逆向：Frida调试设置出现页面弹框：接入互联网以登录iPhone
+* 【未解决】XinaA15越狱的rootless的iPhone11中frida出错：安装和卸载时的路径异常/var/jb/var/jb/
+* 【记录】iPhone11重新安装XinaA15后重新安装Frida
+* 【已解决】XinaA15越狱的iPhone11中安装Frida
+* 【记录】XinaA15恢复越狱环境后重新安装Frida
+* 【记录】iPhone8中用Sileo安装Frida
+* 【记录】iPhone11中Sileo中安装最新版16.0.11的Frida
+* 【记录】Sileo中安装tweak插件：Frida
+* 【记录】iPhone11中用Sileo重新安装最新版16.0.10的Frida
+* 【已解决】iPhone中Cydia中安装升级最新版的16.0.2的Frida
+* 【未解决】Frida从16.0.8到升级到新版本16.0.10
+* 【已解决】越狱后的iPhone11中卸载和重新安装Frida
+* 【已确认】iPhone11中重新确认新版XinaA和新版Frida是否可以正常使用
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
