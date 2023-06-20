@@ -31,6 +31,10 @@
 * 【未解决】Frida从16.0.8到升级到新版本16.0.10
 * 【已解决】越狱后的iPhone11中卸载和重新安装Frida
 * 【已确认】iPhone11中重新确认新版XinaA和新版Frida是否可以正常使用
+* 【已解决】Frida启动js脚本报错：Error could not parse line 1 expecting ,
+* 【已解决】frida去hook函数时确保已执行函数但不触发不输出日志log
+* 【基本解决】Frida的Stalker.follow中events的含义和用法
+* 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
@@ -97,4 +101,5 @@
 * [GSoD Ideas 2023](https://frida.re/docs/gsod-ideas-2023/)
 * [History](https://frida.re/docs/history/)
 * [frida-presentations](https://github.com/frida/frida-presentations)
+* [【Frida 实战】API查找器和拦截器的组合使用 – exchen's blog](https://www.exchen.net/frida-apiresolver-interceptor.html)
 * 
