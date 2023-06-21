@@ -73,3 +73,21 @@
 * [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts)
   * https://github.com/0xdea/frida-scripts/blob/master/raptor_frida_android_enum.js
   * https://github.com/0xdea/frida-scripts/blob/master/raptor_frida_android_trace.js
+* 用frida实现各种功能
+  * [misc/frida-read-process-memory.py at master · poxyran/misc · GitHub](https://github.com/poxyran/misc/blob/master/frida-read-process-memory.py)
+    * counts the number of basic blocks
+      * [misc/count_func_bb.py](https://github.com/poxyran/misc/blob/master/count_func_bb.py)
+    * enumerate-imports
+      * [misc/frida-enumerate-imports.py](https://github.com/poxyran/misc/blob/master/frida-enumerate-imports.py)
+    * enumerate-modules
+      * [misc/frida-enumerate-modules.py](https://github.com/poxyran/misc/blob/master/frida-enumerate-modules.py)
+    * heap-trace
+      * [misc/frida-heap-trace.py](https://github.com/poxyran/misc/blob/master/frida-heap-trace.py)
+    * memory-scan
+      * [misc/frida-memory-scan.py](https://github.com/poxyran/misc/blob/master/frida-memory-scan.py)
+    * read-process-memory
+      * [misc/frida-read-process-memory.py](https://github.com/poxyran/misc/blob/master/frida-read-process-memory.py)
+    * write-process-memory
+      * [misc/frida-write-process-memory.py](https://github.com/poxyran/misc/blob/master/frida-write-process-memory.py)
+    * frida-stalker-example
+      * [misc/frida-stalker-example.py](https://github.com/poxyran/misc/blob/master/frida-stalker-example.py)

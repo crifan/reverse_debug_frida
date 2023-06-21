@@ -35,9 +35,13 @@
 * 【已解决】frida去hook函数时确保已执行函数但不触发不输出日志log
 * 【基本解决】Frida的Stalker.follow中events的含义和用法
 * 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
+* 【已解决】iOS逆向：frida调试hook类NSXPCConnection的setExportedObject
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
+* [mikeash.com: objc_msgSend's New Prototype](https://www.mikeash.com/pyblog/objc_msgsends-new-prototype.html)
+* [iOS security overview & reverse engineering tools / Habr](https://habr.com/en/post/595797/)
+* [objc_msgSend | Apple Developer Documentation](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 * [Frida CodeShare](https://codeshare.frida.re)
 * [Project: iOS Utils](https://codeshare.frida.re/@lichao890427/ios-utils/)
 * [Frida CodeShare BROWSE CODE](https://codeshare.frida.re/browse)

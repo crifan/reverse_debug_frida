@@ -27,6 +27,15 @@
   frida-ps -Uai
   ```
 
+另外：
+
+* 可以加grep去搜索特定app
+  * 举例
+    ```bash
+    ➜ frida-ps -Ua | grep -i preferences
+    46847  设置              com.apple.Preferences
+    ```
+
 ## 举例
 
 
