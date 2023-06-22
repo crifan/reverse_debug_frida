@@ -36,10 +36,16 @@
 * 【基本解决】Frida的Stalker.follow中events的含义和用法
 * 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
 * 【已解决】iOS逆向：frida调试hook类NSXPCConnection的setExportedObject
+* 【已解决】Frida中Stalker如何在Stalker.follow中写代码追踪指令代码运行
+* 【已解决】用frida去hook打印一个类的所有的方法
+* 【已解决】frida去hook函数时确保已执行函数但不触发不输出日志log
+* 【已解决】iOS逆向Apple账号：用frida打印com.apple.ak.auth.xpc的NSXPCConnection的其他属性值
+* 【记录】iOS逆向akd：frida-trace追踪出iPhone8中iOS15.0中账号验证的函数调用过程结果
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
 * [mikeash.com: objc_msgSend's New Prototype](https://www.mikeash.com/pyblog/objc_msgsends-new-prototype.html)
+* [Frida basics - Frida HandBook](https://learnfrida.info/basic_usage/)
 * [iOS security overview & reverse engineering tools / Habr](https://habr.com/en/post/595797/)
 * [objc_msgSend | Apple Developer Documentation](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 * [Frida CodeShare](https://codeshare.frida.re)
@@ -106,4 +112,5 @@
 * [History](https://frida.re/docs/history/)
 * [frida-presentations](https://github.com/frida/frida-presentations)
 * [【Frida 实战】API查找器和拦截器的组合使用 – exchen's blog](https://www.exchen.net/frida-apiresolver-interceptor.html)
+* [Stalker的API](https://frida.re/docs/javascript-api/#stalker)
 * 

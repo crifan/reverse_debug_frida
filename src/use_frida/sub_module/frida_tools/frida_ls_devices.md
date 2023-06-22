@@ -1,5 +1,7 @@
 # frida-ls-devices
 
+* 官网文档：[frida-ls-devices](https://frida.re/docs/frida-ls-devices/)
+
 ## 举例
 
 ```bash

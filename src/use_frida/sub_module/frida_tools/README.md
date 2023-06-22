@@ -5,14 +5,14 @@
 * 相对常用的
   * [frida-trace](../../../use_frida/sub_module/frida_tools/frida_trace.md)
   * [frida-ps](../../../use_frida/sub_module/frida_tools/frida_ps.md)
-  * `frida-ls`
+  * [frida-ls](../../../use_frida/sub_module/frida_tools/frida_ls.md)
 * 不太常用的
   * `frida-apk`
   * `frida-compile`
   * `frida-create`
   * [frida-discover](https://frida.re/docs/frida-discover/)
   * `frida-join`
-  * [frida-ls-devices](https://frida.re/docs/frida-ls-devices/)
+  * [frida-ls-devices](../../../use_frida/sub_module/frida_tools/frida_ls_devices.md)
   * [frida-kill](https://frida.re/docs/frida-kill/)
   * `frida-pull`
   * `frida-push`

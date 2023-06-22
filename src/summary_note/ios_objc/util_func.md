@@ -1,6 +1,6 @@
 # 工具类函数
 
-Frida调试iOS的ObjC期间，整理了些，工具类的函数，供参考。
+Frida调试iOS的ObjC期间，整理了些工具类的函数，贴出供参考。
 
 ## `nsStrToJsStr`：NSString转换为js的String
 

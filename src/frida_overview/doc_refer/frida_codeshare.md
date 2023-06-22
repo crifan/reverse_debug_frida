@@ -24,7 +24,12 @@
 frida --codeshare <frida_codeshare_url_without_url_prefix> -f <YOUR_BINARY>
 ```
 * 举例
+  * ios-utils
+    ```bash
+    frida --codeshare lichao890427/ios-utils -f <YOUR_BINARY>
+    ```
+      * 对应URL是：https://codeshare.frida.re/@lichao890427/ios-utils/
+  * dump-ios
   ```bash
-  frida --codeshare lichao890427/ios-utils -f <YOUR_BINARY>
+  frida --codeshare lichao890427/dump-ios -f YOUR_BINARY
   ```
-    * 对应URL是：https://codeshare.frida.re/@lichao890427/ios-utils/

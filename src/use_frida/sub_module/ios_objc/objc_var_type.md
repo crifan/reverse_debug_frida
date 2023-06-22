@@ -53,11 +53,14 @@
 * `$moduleName`
 * `$protocols`
 * `$methods`
+* `$ownMethods`
 * `$ivars`
 
-所以，常见操作之一是：
+所以，一些常见操作是：
 
-* 查看（当前Object对象的）`类名`=`类的名字`
+#### $className
+
+* 查看（当前`Object`对象的）`类名`=`类的名字`
   ```js
     const argSelfClassName = argSelfObj.$className;
     console.log("argSelfClassName: ", argSelfClassName);
@@ -70,6 +73,29 @@
         argSelfClassName:  NSXPCConnection
         args2ObjClassName:  AKAppleIDAuthenticationService
     ```
+
+#### `$kind`
+
+* 查看（当前`Object`对象的）类型
+  ```js
+    const argSelfKind = argSelfObj.$kind;
+    console.log("argSelfKind:", argSelfKind);
+  ```
+  * 典型log输出
+    ```bash
+    argSelfKind: instance
+    ```
+
+#### `$methods`和`$ownMethods`
+
+* 注意
+  * 此处的`$methods`、`$ownMethods`中的`method`
+      * `method`的英文单词本意是：`方法`=`函数`
+      * 但实际上此处：`method` = 类的`property` + 类的`method`
+        * 注：
+          * `property`=`属性`
+          * `method`=`方法`=`函数`
+* 举例：[$methods和$ownMethods](../../../frida_example/ios_objc/object/methods_ownMethods.md)
 
 ### `ObjC`的`Object`的**自己类的属性**
 
@@ -157,5 +183,3 @@ NSString.stringWithString_("Hello World");
 ## `ObjC`的`Protocol`
 
 ## `ObjC`的`Block`
-
-

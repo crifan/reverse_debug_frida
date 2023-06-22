@@ -1,10 +1,6 @@
-# 用法举例
+# 单个类的单个函数
 
-下面通过举例例子来解释，如何hook调试iOS的ObjC的类的函数。
-
-## Frida调试ObjC的单个类的单个函数
-
-### Frida去hook调试ObjC函数：`-[NSXPCConnection setExportedObject:]`
+## Frida去hook调试ObjC函数：`-[NSXPCConnection setExportedObject:]`
 
 * 背景
 
@@ -16,14 +12,13 @@
 
 涉及到的操作iPhone中的app的页面有：
 
-![iphone_preferences_login](../../../assets/img/iphone_preferences_login.jpg)
+![iphone_preferences_login](../../../../assets/img/iphone_preferences_login.jpg)
 
-![iphone_preferences_appleid](../../../assets/img/iphone_preferences_appleid.jpg)
+![iphone_preferences_appleid](../../../../assets/img/iphone_preferences_appleid.jpg)
 
-![iphone_preferences_inputed_id](../../../assets/img/iphone_preferences_inputed_id.jpg)
+![iphone_preferences_inputed_id](../../../../assets/img/iphone_preferences_inputed_id.jpg)
 
-
-#### 最基础的，hook类的函数，只是打印参数值
+### 最基础的，hook类的函数，只是打印参数值
 
 * 适用场景：确定要hook的类和函数是：能找到的=是存在的 -》代码才能正确hook，否则会报错找不到
   * 写法：直接把`类名`和`函数名`放到`ObjC.classes`的后面
@@ -71,7 +66,7 @@
 
 典型输出log：
 
-```bash
+```log
 ➜  scripts frida -U -n akd -l hook_NSXPCConnection_setExportedObject.js
      ____
     / _  |   Frida 16.0.19 - A world-class dynamic instrumentation toolkit
@@ -99,7 +94,7 @@ argSelf=0x102725ce0, argSel=0x19b362b44, realArg1=0x0
 argSelf=0x102a21570, argSel=0x19b362b44, realArg1=0x0
 ```
 
-#### 再去加上额外的参数的转换和打印值
+### 简单优化：加上额外的参数的转换和打印相关值
 
 再去加上额外的，参数类型转换
 
@@ -162,7 +157,7 @@ function hook_specific_method_of_class(className, funcName)
 hook_specific_method_of_class("NSXPCConnection", "- setExportedObject:")
 ```
 
-#### 日志优化：把Frida类名和函数名转换为ObjC的类名和函数名
+### 优化日志：把Frida类名和函数名转换为ObjC的类名和函数名
 
 可以继续去加上：
 
@@ -241,7 +236,7 @@ function hook_specific_method_of_class(className, funcName)
 hook_specific_method_of_class("NSXPCConnection", "- setExportedObject:")
 ```
 
-#### 参数优化：打印函数全部的真正参数
+### 优化参数：打印函数全部的真正参数
 
 如之前[ObjC的参数](../../../use_frida/sub_module/ios_objc/objc_para.md)中的`计算ObjC的函数的真正参数的个数 + 打印全部参数`的实例代码，加到此处，略作调整变成：
 
@@ -438,7 +433,7 @@ funcName= - setExportedObject:
 argCount:  1
 ```
 
-#### 逻辑优化：加上参数值的判断和过滤
+### 优化逻辑：加上参数值的判断和过滤
 
 如果此处需要有类似于，过滤参数的值，判断参数的值，并且过滤只输出对应值，则可以去：
 
@@ -592,7 +587,7 @@ args2:  0x0
 
 等内容。
 
-#### 最终的代码
+### 最终代码
 
 ```js
 /*******************************************************************************
@@ -807,12 +802,5 @@ argSelfObj:  <ACTrackedXPCConnection: 0x102711470> connection to service named c
 argSelfObj:  <ACTrackedXPCConnection: 0x102711470> connection to service with pid 104 named com.apple.accountsd.accountmanager
 ```
 
-![frida_objc_hook_func](../../../assets/img/frida_objc_hook_func.jpg)
+![frida_objc_hook_func](../../../../assets/img/frida_objc_hook_func.jpg)
 
-## Frida调试ObjC的单个类的所有函数
-
-TODO：加上示例代码
-
-## Frida调试ObjC的所有类的所有函数
-
-TODO：加上示例代码

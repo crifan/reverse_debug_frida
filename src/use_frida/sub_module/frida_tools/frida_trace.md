@@ -3,68 +3,45 @@
 * `frida-trace`
   * 官网文档
     * [frida-trace](https://frida.re/docs/frida-trace/)
-
-## 用法举例
-
-## 调试`akd`进程
-
-命令：
-
-```bash
-frida -U -n akd -l ./fridaStalker_akdSymbol2575.js
-```
-
-## 调试`Preferences`设置app
-
-用frida-trace追踪Preferences设置中Apple账号登录过程调用了哪些函数
-
-* 写法1：要包含和排除的ObjC的类，都直接加到命令行中
-  ```bash
-  frida-trace -U -F com.apple.Preferences -m "*[AA* *]" -m "*[AK* *]" -m "*[AS* *]" -m "*[NSXPC* *]" -M "-[ASDBundle copyWithZone:]" -M "-[ASDInstallationEvent copyWithZone:]" -M "-[NSXPCEncoder _encodeArrayOfObjects:forKey:]" -M "-[NSXPCEncoder _encodeUnkeyedObject:]" -M "-[NSXPCEncoder _replaceObject:]" -M "-[NSXPCEncoder _checkObject:]" -M "-[NSXPCEncoder _encodeObject:]" -M "-[NSXPCConnection replacementObjectForEncoder:object:]"
-  ```
-  * 说明
-    * `-U -F com.apple.Preferences`：调试目标设备和目标app是和frida写法一致
-      * `-U`：调试设备是（Mac中通过）USB连接的iPhone
-      * `-F com.apple.Preferences`：调试的app是当前iPhone中，最前端所显示的app = 设置app = 包名是`com.apple.Preferences`
-    * 但是后续要trace的函数写法，是frida-trace所特有的语法：
-      * `-m xxx`：include=包含要调试的Objc的类
-      * `-M xxx`：exclue=排除掉Objc的类，不调试
-* 写法2：觉得参数写的太长= 包含和排除的ObjC的类太多，所以都放到一个单独的文件中
-  ```bash
-  frida-trace -U -F com.apple.Preferences -O Preferences_accoutLogin_hook.txt
-  ```
-    * `Preferences_accoutLogin_hook.txt`中的内容是
-      ```txt
-      -m "*[AA* *]"
-      -m "*[AK* *]"
-      -m "*[AMS* *]"
-      -m "*[AS* *]"
-      -m "*[AC* *]"
-      -m "*[NSError *]"
-      -M "-[* classForCoder]"
-      -M "-[* classForKeyedArchiver]"
-      -M "-[AAUISignInViewController numberOfSectionsInTableView:]"
-      -M "-[AAUISignInViewController tableView*]"
-      -M "-[NSPath* *]"
-      -M "-[* copyWithZone:]"
-      -M "-[*NSCFString *]"
-      -M "-[*NSCFError *]"
-      -M "-[* *ayoutSubviews]"
-      -M "-[* intrinsicContentSize]"
-      -M "-[* viewForLastBaselineLayout]"
-      -M "-[* contentLayoutGuide]"
-      -M "-[* _updateStyleIfNeeded]"
-      -M "-[* _updateStackViewSpacing]"
-      -M "-[* _updateLabelFonts]"
-      -M "-[AAUILabel *]"
-      -M "-[AAUIBuddyView *]"
-      -M "-[AAUIHeaderView *]"
-      -M "-[* .cxx_destruct]"
-      -M "-[* dealloc]"
-      -M "-[* supportsSecureCoding]"
-      -M "-[* initWithCoder:]"
-      -M "-[ACAccountStore _clearAccountCaches]"
-      ```
+  * 核心参数解释
+    * 通用逻辑
+      * `-m`、`-M`等参数，支持通配符
+        * `*`：表示`所有的`（类或方法名）
+    * 参数
+      * `-m`
+        * 语法：`-m OBJC_METHOD, --include-objc-method OBJC_METHOD`
+          * include OBJC_METHOD
+        * 含义：（要去hook的）包含的ObjC的（类和）方法
+      * `-M`
+        * 语法：`-M OBJC_METHOD, --exclude-objc-method OBJC_METHOD`
+          * exclude OBJC_METHOD
+        * 含义：（ 不要hook的）排除掉的ObjC的（类和）方法
+      * `-O`
+        * 语法：`-O FILE, --options-file FILE`
+          * text file containing additional command line options
+        * 含义：用Option文件，包含额外的命令行参数
+          * 典型用法是，觉得`-m`、`-M`等要去hook和要去排除掉的类和方法，太多了，就转去放到Option文件中                        
+  * 举例
+    * 概述
+      * hook调试`Preferences`：`-m`、`-M`等参数直接放到命令行中
+        ```bash
+        frida-trace -U -F com.apple.Preferences -m "*[AA* *]" -M "-[ASDBundle copyWithZone:]" -M "-[* copyWithZone:]" -M "-[AAUILabel *]"
+        ```
+      * hook调试`akd`：觉得`-m`、`-M`等参数太多，则放到`-O`的Option文件中
+        ```bash
+        frida-trace -U -n akd -O akdObjcMethods.txt
+        ```
+        * Option文件`akdObjcMethods.txt`
+          ```txt
+          -m "*[AA* *]"
+          -m "*[AK* *]"
+          -m "*[AS* *]"
+          -m "*[NSXPC* *]"
+          -M "-[NSXPC*coder *]"
+          -M "-[NSXPCConnection replacementObjectForEncoder:object:]"
+          ```
+    * 详见
+      * [frida-trace的iOS的ObjC的举例](../../../frida_example/frida_trace/ios_objc/README.md)
 
 ## help语法帮助
 
