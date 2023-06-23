@@ -3,16 +3,16 @@
 `frida-tool`是Frida的一套工具的集合，包括：
 
 * 相对常用的
-  * [frida-trace](../../../use_frida/sub_module/frida_tools/frida_trace.md)
-  * [frida-ps](../../../use_frida/sub_module/frida_tools/frida_ps.md)
-  * [frida-ls](../../../use_frida/sub_module/frida_tools/frida_ls.md)
+  * [frida-trace](../../use_frida/frida_trace/README.md)
+  * [frida-ps](../../use_frida/frida_tools/frida_ps.md)
+  * [frida-ls](../../use_frida/frida_tools/frida_ls.md)
 * 不太常用的
   * `frida-apk`
   * `frida-compile`
   * `frida-create`
   * [frida-discover](https://frida.re/docs/frida-discover/)
   * `frida-join`
-  * [frida-ls-devices](../../../use_frida/sub_module/frida_tools/frida_ls_devices.md)
+  * [frida-ls-devices](../../use_frida/frida_tools/frida_ls_devices.md)
   * [frida-kill](https://frida.re/docs/frida-kill/)
   * `frida-pull`
   * `frida-push`

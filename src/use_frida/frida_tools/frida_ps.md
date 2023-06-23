@@ -1,7 +1,7 @@
 # frida-ps
 
 * `frida-ps`
-  * 是[frida-tools](../../../use_frida/sub_module/frida_tools/README.md)中一个常用的工具
+  * 是[frida-tools](../../use_frida/frida_tools/README.md)中一个常用的工具
   * 作用：显示系统进程列表
     * 类似于`ps`
     * 支持显示当前（Mac等）**PC端**的进程和（iPhone等）**移动端**中的进程

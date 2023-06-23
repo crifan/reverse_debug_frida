@@ -238,7 +238,7 @@ hook_specific_method_of_class("NSXPCConnection", "- setExportedObject:")
 
 ### 优化参数：打印函数全部的真正参数
 
-如之前[ObjC的参数](../../../use_frida/sub_module/ios_objc/objc_para.md)中的`计算ObjC的函数的真正参数的个数 + 打印全部参数`的实例代码，加到此处，略作调整变成：
+如之前 [ObjC的参数](../../../../use_frida/frida_cli/ios_objc/objc_para.md) 中的`计算ObjC的函数的真正参数的个数 + 打印全部参数`的实例代码，加到此处，略作调整变成：
 
 ```js
 /*******************************************************************************

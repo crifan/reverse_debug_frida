@@ -4,7 +4,7 @@
 
 * PC端
   * Mac
-    * 安装`frida` => 使得有`frida`命令行工具可用
+    * 安装`frida` => 使得有[frida命令行工具](../use_frida/frida_cli/README.md)可用
       ```bash
       pip3 install frida
       ```
@@ -12,7 +12,7 @@
         ```bash
         pip show frida
         ```
-    * 安装`frida-tools` => 使得有[frida-trace](../use_frida/sub_module/frida_tools/frida_trace.md)、[frida-ps](../use_frida/sub_module/frida_tools/frida_ps.md)、[frida-ls](../use_frida/sub_module/frida_tools/frida_ls.md)等命令行工具可用
+    * 安装`frida-tools` => 使得有[frida-trace](../use_frida/frida_trace/README.md)、[frida-ps](../use_frida/frida_tools/frida_ps.md)、[frida-ls](../use_frida/frida_tools/frida_ls.md)等命令行工具可用
       ```bash
       pip3 install frida-tools
       ```

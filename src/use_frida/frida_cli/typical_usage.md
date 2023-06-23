@@ -1,6 +1,6 @@
 # Frida的典型使用方式
 
-在搞懂了[调试目标方式](../../use_frida/common/debug_target.md)和[写js脚本](../../use_frida/common/js_script.md)后，再来介绍
+在搞懂了[调试目标方式](../../use_frida/frida_cli/debug_target.md)和[写js脚本](../../use_frida/frida_cli/js_script.md)后，再来介绍
 
 * Frida的典型使用方式
   * 用哪个命令？

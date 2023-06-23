@@ -41,9 +41,34 @@
 * 【已解决】frida去hook函数时确保已执行函数但不触发不输出日志log
 * 【已解决】iOS逆向Apple账号：用frida打印com.apple.ak.auth.xpc的NSXPCConnection的其他属性值
 * 【记录】iOS逆向akd：frida-trace追踪出iPhone8中iOS15.0中账号验证的函数调用过程结果
+* 【已解决】Mac中如何使用frida的Stalker的js脚本
+* 【已解决】Frida调试时如何指定进程
+* 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
+* 【已解决】Frida中如何通过frida启动被测app程序iOS版抖音
+* 【已解决】用frida去hook报错：Failed to spawn unable to find process with name
+* 【已解决】frida调试进程直接运行不要每次都输入%resume才运行
+* 【未解决】iOS逆向Apple账号：用frida去hook打印所有iOS的ObjC函数调用
+* 【已解决】Frida中js代码中两个地址指针数值相加
+* 【已解决】frida中ptr的含义
+* 【已解决】js中把ObjC函数调用写法转换成Frida中ObjC函数调用写法
+* 【已解决】frida打印iOS的ObjC函数的参数的值
+* 【已解决】frida动态判断iOS的ObjC函数的参数个数并打印参数值
+* 【已解决】frida去hook单个类的单个函数
+* 【已解决】用frida去hook打印一个类的所有的方法
+* 【已解决】frida去hook监控ObjC函数时把类名和函数名整合成Objc的语法
+* 【已解决】Frida中hook打印iOS中的类和函数
+* 【已解决】iOS逆向：Frida的hook中onLeave中如何获取到self类本身的实例变量
+* 【已解决】frida中ObjC.Object的语法和含义
+* 【未解决】frida中打印ObjC参数类型NSPathStore2的值
+* 【已解决】frida的hook中如何把NSString转换为C的string并打印
+* 【未解决】frida去hook时判断函数参数的类型是否是NSString
+* 【已解决】frida中打印操作Objc的参数SEL导致程序崩溃
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
+* [regex - How do you access the matched groups in a JavaScript regular expression? - Stack Overflow](https://stackoverflow.com/questions/432493/how-do-you-access-the-matched-groups-in-a-javascript-regular-expression/75768448#75768448)
+* [NativePointer - JavaScript API](https://frida.re/docs/javascript-api/#nativepointer)
+* [frida-ios-hook/hook-all-methods-of-specific-class.js at master · noobpk/frida-ios-hook · GitHub](https://github.com/noobpk/frida-ios-hook/blob/master/frida-ios-hook/frida-scripts/hook-all-methods-of-specific-class.js)
 * [mikeash.com: objc_msgSend's New Prototype](https://www.mikeash.com/pyblog/objc_msgsends-new-prototype.html)
 * [Frida basics - Frida HandBook](https://learnfrida.info/basic_usage/)
 * [iOS security overview & reverse engineering tools / Habr](https://habr.com/en/post/595797/)

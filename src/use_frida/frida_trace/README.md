@@ -41,7 +41,7 @@
           -M "-[NSXPCConnection replacementObjectForEncoder:object:]"
           ```
     * 详见
-      * [frida-trace的iOS的ObjC的举例](../../../frida_example/frida_trace/ios_objc/README.md)
+      * [frida-trace的iOS的ObjC的举例](../../frida_example/frida_trace/ios_objc/README.md)
 
 ## help语法帮助
 

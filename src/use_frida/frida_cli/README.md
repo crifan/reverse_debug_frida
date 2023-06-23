@@ -15,15 +15,6 @@
 pip3 install frida
 ```
 
-## 使用
-
-详见之前独立章节：
-
-* [Frida的通用逻辑](../../use_frida/common/README.md)
-  * [调试目标方式](../../use_frida/common/debug_target.md)
-  * [写js脚本](../../use_frida/common/js_script.md)
-* [Frida的典型使用方式](../../use_frida/typical_usage/README.md)
-
 ## help语法帮助
 
 ```bash

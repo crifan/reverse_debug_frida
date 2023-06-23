@@ -6,23 +6,25 @@
 
 * `ObjC`的`Object`
 
-所以常见的操作之一是：
+### ObjC的Object的常见的操作
 
 * 转换为ObjC的类
   ```js
-    const argSelfObj = new ObjC.Object(argSelf);
+  const argSelf = args[0]
+  const argSelfObj = new ObjC.Object(argSelf)
 
-    const args2Obj = new ObjC.Object(args2);
-    // const args2Obj = new ObjC.Object(ptr(args2));
+  const args2 = args[2]
+  const args2Obj = new ObjC.Object(args2)
+  // const args2Obj = new ObjC.Object(ptr(args2))
   ```
 
 以及紧接着的：
 
 * 打印类的信息
   ```js
-    console.log("argSelfObj: ", argSelfObj);
+    console.log("argSelfObj: ", argSelfObj)
 
-    console.log("args2Obj: ", args2Obj);
+    console.log("args2Obj: ", args2Obj)
   ```
   * 典型log输出
     ```bash
@@ -95,14 +97,14 @@
         * 注：
           * `property`=`属性`
           * `method`=`方法`=`函数`
-* 举例：[$methods和$ownMethods](../../../frida_example/ios_objc/object/methods_ownMethods.md)
+* 举例：[$methods和$ownMethods](../../../frida_example/frida/ios_objc/object/methods_ownMethods.md)
 
 ### `ObjC`的`Object`的**自己类的属性**
 
-而对于本身`ObjC`的类的属性，也是访问的：
+而对于本身`ObjC`的类的属性，也是支持访问的：
 
 * 访问`ObjC`的自己类的属性的方式：把属性当做函数访问 -》加上括号`()`
-  * 语法：`curObj.propertyName()`
+  * 语法：`iosObjcObj.propertyName()`
   * 举例
     * 获取[NSXPCConnection的serviceName](https://developer.apple.com/documentation/foundation/nsxpcconnection/1413751-servicename)
       * 对于Objc的Object对象：`argSelfObj:  <NSXPCConnection: 0x105744c00> connection from pid 46847 on mach service named com.apple.ak.auth.xpc`
@@ -172,8 +174,9 @@ NSString.stringWithString_("Hello World");
 
 * `SEL`的常见操作之一就是：转换成字符串，再去打印
   ```js
-    const argSelStr = ObjC.selectorAsString(argSel);
-    console.log("argSelStr: ", argSelStr);
+  const argSel = args[1]
+  const argSelStr = ObjC.selectorAsString(argSel);
+  console.log("argSelStr: ", argSelStr);
   ```
   * 典型log输出
     ```bash

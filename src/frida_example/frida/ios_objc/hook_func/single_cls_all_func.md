@@ -32,13 +32,13 @@ function run_hook_all_methods_of_specific_class(className_arg)
     var methods = ObjC.classes[className].$ownMethods;
     for (var i = 0; i < methods.length; i++)
     {
-        console.log("[-] "+methods[i]);
-        console.log("\t[*] Hooking into implementation");
+        console.log("  "+methods[i]);
+        // console.log("\t[*] Hooking into implementation");
         //eval('var className2 = "'+className+'"; var funcName2 = "'+methods[i]+'"; var hook = eval(\'ObjC.classes.\'+className2+\'["\'+funcName2+\'"]\'); Interceptor.attach(hook.implementation, {   onEnter: function(args) {    console.log("[*] Detected call to: " + className2 + " -> " + funcName2);  } });');
         var className2 = className;
         var funcName2 = methods[i];
         hook_class_method(className2, funcName2);
-        console.log("\t[*] Hooking successful");
+        // console.log("\t[*] Hooking successful");
     }
     console.log("[*] Completed: Hook all methods of a specific class");
 }
@@ -72,270 +72,94 @@ hook_all_methods_of_specific_class("AAUISignInViewController")
 Attaching...
 [*] Started: Hook all methods of a specific class
 [+] Class Name: AAUISignInViewController
-[-] + phoneNumberSupportedWithCompletion:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - textField:shouldChangeCharactersInRange:replacementString:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:viewForHeaderInSection:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - textFieldShouldReturn:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _keyboardWillHide:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - titleLabel
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _keyboardWillShow:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - loadView
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setUsername:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - sizeCategoryDidChange:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _hasValidCredentials
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - username
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:numberOfRowsInSection:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - viewDidLoad
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _tableView
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - delegate
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - authenticationContext
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _setEnabled:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _tableFooterView
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - viewWillAppear:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:willDisplayCell:forRowAtIndexPath:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - remoteUIController:shouldLoadRequest:redirectResponse:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - .cxx_destruct
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - numberOfSectionsInTableView:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - viewDidDisappear:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - traitCollectionDidChange:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - initWithCoder:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:heightForRowAtIndexPath:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:viewForFooterInSection:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:cellForRowAtIndexPath:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setDelegate:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _tableHeaderView
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - tableView:shouldDrawTopSeparatorForSection:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - messageLabel
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - initWithNibName:bundle:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - dealloc
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _cancelBarButtonItem
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - viewDidLayoutSubviews
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _cancelPasswordDelegateIfNecessary
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - context:needsPasswordWithCompletion:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _passwordCell
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _textFieldDidChange:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _nextBarButtonItem
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _updateConstraintsForTraitCollection:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _beginObservingTextFieldDidChangeNotifications
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _beginObservingKeyboardWillShowNotifications
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _beginObservingSizeCategoryNotification
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _usernameCell
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _updateContentInsetWithHeight:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _endObservingSizeCategoryNotification
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _endObservingTextFieldDidChangeNotifications
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _endObservingKeyboardWillShowNotifications
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _akServiceType
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _shouldAnticipatePiggybacking
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _accountsHeaderView
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _cancelButtonSelected:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _nextButtonSelected:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - constrainView:toFillHeaderFooterView:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - allowsAccountCreation
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _actionButtonSelected:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - showServiceIcons
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _stringForFooter
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - privacyLinkIdentifiers
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _showOnlyPassword
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _isGreenTeaCapable
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _setUsernameCellWaiting:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _delegate_signInViewControllerDidCancel
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _attemptAuthentication
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _prewarmSignInFlowIfApplicable
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _presentForgotAppleIDPane
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _presentCreateAppleIDPane
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _attemptAuthenticationWithContext:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _isPasswordFieldVisible
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _isRunningInSettings
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _repairCloudAccountWithAuthenticationResults:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _delegate_signInViewControllerDidCompleteWithAuthenticationResults:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _authorizationValueForAuthenticationResults:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _passwordFieldIndexPath
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _setPasswordFieldHidden:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _setAkServiceType:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - _setShouldAnticipatePiggybacking:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setAllowsAccountCreation:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setShowServiceIcons:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - canEditUsername
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setCanEditUsername:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setPrivacyLinkIdentifiers:
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - showingPasswordCell
-    [*] Hooking into implementation
-    [*] Hooking successful
-[-] - setShowingPasswordCell:
-    [*] Hooking into implementation
-    [*] Hooking successful
+  + phoneNumberSupportedWithCompletion:
+  - textField:shouldChangeCharactersInRange:replacementString:
+  - tableView:viewForHeaderInSection:
+  - textFieldShouldReturn:
+  - _keyboardWillHide:
+  - titleLabel
+  - _keyboardWillShow:
+  - loadView
+  - setUsername:
+  - sizeCategoryDidChange:
+  - _hasValidCredentials
+  - username
+  - tableView:numberOfRowsInSection:
+  - viewDidLoad
+  - _tableView
+  - delegate
+  - authenticationContext
+  - _setEnabled:
+  - _tableFooterView
+  - viewWillAppear:
+  - tableView:willDisplayCell:forRowAtIndexPath:
+  - remoteUIController:shouldLoadRequest:redirectResponse:
+  - .cxx_destruct
+  - numberOfSectionsInTableView:
+  - viewDidDisappear:
+  - traitCollectionDidChange:
+  - initWithCoder:
+  - tableView:heightForRowAtIndexPath:
+  - tableView:viewForFooterInSection:
+  - tableView:cellForRowAtIndexPath:
+  - setDelegate:
+  - _tableHeaderView
+  - tableView:shouldDrawTopSeparatorForSection:
+  - messageLabel
+  - initWithNibName:bundle:
+  - dealloc
+  - _cancelBarButtonItem
+  - viewDidLayoutSubviews
+  - _cancelPasswordDelegateIfNecessary
+  - context:needsPasswordWithCompletion:
+  - _passwordCell
+  - _textFieldDidChange:
+  - _nextBarButtonItem
+  - _updateConstraintsForTraitCollection:
+  - _beginObservingTextFieldDidChangeNotifications
+  - _beginObservingKeyboardWillShowNotifications
+  - _beginObservingSizeCategoryNotification
+  - _usernameCell
+  - _updateContentInsetWithHeight:
+  - _endObservingSizeCategoryNotification
+  - _endObservingTextFieldDidChangeNotifications
+  - _endObservingKeyboardWillShowNotifications
+  - _akServiceType
+  - _shouldAnticipatePiggybacking
+  - _accountsHeaderView
+  - _cancelButtonSelected:
+  - _nextButtonSelected:
+  - constrainView:toFillHeaderFooterView:
+  - allowsAccountCreation
+  - _actionButtonSelected:
+  - showServiceIcons
+  - _stringForFooter
+  - privacyLinkIdentifiers
+  - _showOnlyPassword
+  - _isGreenTeaCapable
+  - _setUsernameCellWaiting:
+  - _delegate_signInViewControllerDidCancel
+  - _attemptAuthentication
+  - _prewarmSignInFlowIfApplicable
+  - _presentForgotAppleIDPane
+  - _presentCreateAppleIDPane
+  - _attemptAuthenticationWithContext:
+  - _isPasswordFieldVisible
+  - _isRunningInSettings
+  - _repairCloudAccountWithAuthenticationResults:
+  - _delegate_signInViewControllerDidCompleteWithAuthenticationResults:
+  - _authorizationValueForAuthenticationResults:
+  - _passwordFieldIndexPath
+  - _setPasswordFieldHidden:
+  - _setAkServiceType:
+  - _setShouldAnticipatePiggybacking:
+  - setAllowsAccountCreation:
+  - setShowServiceIcons:
+  - canEditUsername
+  - setCanEditUsername:
+  - setPrivacyLinkIdentifiers:
+  - showingPasswordCell
+  - setShowingPasswordCell:
 [*] Completed: Hook all methods of a specific class
 [iPhone::PID::18533 ]->
 ```
