@@ -51,7 +51,7 @@ frida-trace -U -F com.apple.Preferences -O Preferences_accoutLogin_hook.txt
 
 ## 输出
 
-```bash
+```txt
 ...
 -[NSURLError encodeWithCoder:]: Loaded handler at "/Users/crifan/dev/dev_root/iosReverse/AppleStore/Preferences_app/dynamicDebug/frida/frida-trace/__handlers__/NSURLError/encodeWithCoder_.js"
 Started tracing 23636 functions. Press Ctrl+C to stop.
