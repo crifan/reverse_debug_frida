@@ -63,9 +63,27 @@
 * 【已解决】frida的hook中如何把NSString转换为C的string并打印
 * 【未解决】frida去hook时判断函数参数的类型是否是NSString
 * 【已解决】frida中打印操作Objc的参数SEL导致程序崩溃
+* 【已解决】Mac中Frida去hook函数：用frida还是frida-trace
+* 【未解决】Mac中frida-trace报错：Failed to spawn unable to find process with name
+* 【已解决】iOS逆向akd：用frida-trace追踪账号验证的过程
+* 【已解决】frida-trace中把更多参数放到参数文件中
+* 【已解决】frida-trace去hook导致app崩溃最后输出Process terminated
+* 【已解决】frida-trace输出log日志到文件中
+* 【记录】iOS逆向Apple账号：分析frida-trace去hook到的下一步按钮内部的函数调用逻辑
+* 【记录】iOS逆向akd：frida-trace追踪出iPhone8中iOS15.0中账号验证的函数调用过程结果
+* 【记录】iOS逆向Apple账号：frida-trace去hook逻辑加上NSString和NSError等通用的类
+* 【已解决】iOS逆向调试：用Frida-trace实时追踪相关ObjC函数调用
+* 【未解决】iOS逆向Apple账号：用frida-trace去hook监控NSURL网络请求
+* 【未解决】iOS逆向Apple账号：用Frida去hook网络请求NSURL相关函数调用
+* 【记录】iOS逆向Apple账号：frida-trace追踪多个ObjC函数的调用过程
+* 【记录】iOS逆向Apple账号：优化frida-trace的函数hook范围以定位账号登录过程核心逻辑
+* 【未解决】iOS逆向Apple账号：用frida-trace调试signin/v2/login的函数调用过程
+* 【记录】frida-trace调试追踪到的输入密码下一步的账号登录过程中的ObjC函数调用过程
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
+* [【iOS逆向与安全】frida-trace入门 - 移动端小陈 - 博客园](https://www.cnblogs.com/witchan/p/16904169.html)
+* [Frida HandBook](https://learnfrida.info/)
 * [regex - How do you access the matched groups in a JavaScript regular expression? - Stack Overflow](https://stackoverflow.com/questions/432493/how-do-you-access-the-matched-groups-in-a-javascript-regular-expression/75768448#75768448)
 * [NativePointer - JavaScript API](https://frida.re/docs/javascript-api/#nativepointer)
 * [frida-ios-hook/hook-all-methods-of-specific-class.js at master · noobpk/frida-ios-hook · GitHub](https://github.com/noobpk/frida-ios-hook/blob/master/frida-ios-hook/frida-scripts/hook-all-methods-of-specific-class.js)

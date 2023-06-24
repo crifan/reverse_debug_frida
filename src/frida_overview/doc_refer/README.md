@@ -53,6 +53,7 @@
 
 * 教程
   * [Frida basics - Frida HandBook (learnfrida.info)](https://learnfrida.info/basic_usage/)
+  * [Frida HandBook](https://learnfrida.info/)
 * 使用案例
   * [frida-presentations](https://github.com/frida/frida-presentations)
   * [Frida在iOS平台进行OC函数hook的常用方法 | 8Biiit's Blog](https://8biiit.github.io/2019/08/12/Frida/)

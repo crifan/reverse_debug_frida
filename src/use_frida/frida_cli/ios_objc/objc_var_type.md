@@ -1,5 +1,16 @@
 # Frida中ObjC的变量类型
 
+## 通用逻辑
+
+* 获取ObjC的某个类
+  * 写法：`ObjC.classes.someClassName` == `ObjC.classes[someClassName]`
+  * 举例
+    ```bash
+    ObjC.classes.NSMutableData.data()
+
+    ObjC.classes.NSString.stringWithString_("Crifan Li")
+    ```
+
 ## `ObjC`的`Object`
 
 此处的第一个参数和后续的真正的函数的（第一个以及后续的其他）参数，往往是个（iOS中ObjC的）`Class`或`Instance`，在`Frida`中对应的叫做：

@@ -23,3 +23,13 @@
     * frida_dump
       * https://github.com/lasting-yang/frida_dump
         * frida dump dex, frida dump so
+  * frida-cycript
+    * https://github.com/nowsecure/frida-cycript
+      * Cycript fork powered by Frida
+  * r2frida
+    * https://github.com/nowsecure/r2frida
+      * Radare2 and Frida better together
+  * frida-trace
+    * https://github.com/nowsecure/frida-trace
+      * Trace APIs declaratively through Frida
+

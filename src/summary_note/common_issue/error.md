@@ -1,5 +1,17 @@
 # 常见报错
 
+## Process terminated=进程结束=崩溃退出
+
+* 现象：`frida`或`frida-trace`调试时，时不时的遇到`Process terminated`，而停止退出调试
+  * 现象一：`frida-trace -U -F com.apple.Preferences -m "*[AA* *]" -m "*[AK* *]" -m "*[AS* *]" -m "*[NS* *]" -M "-[ASDBundle copyWithZone:]" -M "-[ASDInstallationEvent copyWithZone:]"`导致崩溃
+    * ![frida_trace_add_ns](../../assets/img/frida_trace_add_ns.png)
+* 原因：暂不完全清楚
+  * 可能是：
+    * 要么是：`frida-trace`去hook的函数太多了，比如，加了`-m "*[NS* *]"`后导致崩溃
+      * 注：iOS的ObjC的内部的多数，甚至是大多数，都是NS开头的，导致匹配到太多的类和函数，系统处理不过来了，导致frida崩溃。导致被调试的app崩溃。
+        * 注：`NS`=`NextStep`，是iOS系统前身的苹果收购的NextStep公司名字
+      * 解决办法：减少hook的范围=缩小匹配范围，比如改为：`-m "*[NSXPC* *]"`，暂时只关注我们要调试的`NSXPCConnection`的相关内容，基本上可以：避免崩溃
+
 ## Failed to spawn: unable to find process with name 'Preferences'
 
 * 报错：`Failed to spawn: unable to find process with name 'Preferences'`
