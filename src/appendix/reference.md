@@ -79,9 +79,32 @@
 * 【记录】iOS逆向Apple账号：优化frida-trace的函数hook范围以定位账号登录过程核心逻辑
 * 【未解决】iOS逆向Apple账号：用frida-trace调试signin/v2/login的函数调用过程
 * 【记录】frida-trace调试追踪到的输入密码下一步的账号登录过程中的ObjC函数调用过程
+* 【记录】Mac中测试Frida各个命令的效果
+* 【已解决】Mac中frida报错：ValueError file descriptor cannot be a negative integer -42
+* 【记录】frida的frida-ps用法
+* 【整理】frida心得：frida-ps用法详解
+* 【未解决】iPhone11中如何停止frida-server
+* 【未解决】iPhone中用launchctl去启动和停止frida-server服务进程
+* 【未解决】frida导致iPhone重启：分析panic-full的ips是否和frida-server崩溃有关系
+* 【基本解决】iOS 15.1的iPhone11中frida-server所用架构是arm64e还是arm64
+* 【未解决】Frida的stalker trace
+* 【基本解决】Frida的Stalker.follow中events的含义和用法
+* 【已解决】Frida去hook函数报错：Error unable to intercept function at please file a bug
+* 【无法解决】Frida的Stalker中transform中的instruction是否可以获取到bytes即opcode
+* 【已解决】优化Frida的Stalker的代码追踪逻辑
+* 【已解决】Frida的Stalker中函数地址和指令地址匹配不上
+* 【已解决】搞懂Frida的Stalker.follow的transform的调试指令运行的逻辑
+* 【已解决】Frida的Stalker.follow中transform中的指令instruction
+* 【记录】分析Frida的Stalker对于___lldb_unnamed_symbol2575代码追踪的输出结果
+* 【记录】学习Frida官网文档Stalker搞懂基本用法和逻辑
+* 【已解决】Frida的Stalker中去判断是否是函数的代码指令的逻辑
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
+* [【iOS逆向】某营业厅算法分析_小陈_InfoQ写作社区](https://xie.infoq.cn/article/4c1fe5ca87269a7a5ac1645fc)
+* [[原创] sktrace：基于 Frida Stalker 的 trace 工具-Android安全-看雪-安全社区|安全招聘|kanxue.com](https://bbs.kanxue.com/thread-264680.htm)
+* [oleavr (Ole André Vadla Ravnås)](https://github.com/oleavr)
+* [Frida 12.3 Debuts New Crash Reporting Feature - NowSecure](https://www.nowsecure.com/blog/2019/02/07/frida-12-3-debuts-new-crash-reporting-feature/)
 * [【iOS逆向与安全】frida-trace入门 - 移动端小陈 - 博客园](https://www.cnblogs.com/witchan/p/16904169.html)
 * [Frida HandBook](https://learnfrida.info/)
 * [regex - How do you access the matched groups in a JavaScript regular expression? - Stack Overflow](https://stackoverflow.com/questions/432493/how-do-you-access-the-matched-groups-in-a-javascript-regular-expression/75768448#75768448)
@@ -156,4 +179,5 @@
 * [frida-presentations](https://github.com/frida/frida-presentations)
 * [【Frida 实战】API查找器和拦截器的组合使用 – exchen's blog](https://www.exchen.net/frida-apiresolver-interceptor.html)
 * [Stalker的API](https://frida.re/docs/javascript-api/#stalker)
+* [DefinitelyTyped/index.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/frida-gum/index.d.ts)
 * 

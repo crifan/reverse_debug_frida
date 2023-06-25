@@ -1,6 +1,6 @@
 {
-  "latestVersion": "v2.1",
-  "lastUpdate": "20230624",
+  "latestVersion": "v2.2",
+  "lastUpdate": "20230625",
   "gitRepoName": "reverse_debug_frida",
   "bookName": "逆向调试利器：Frida",
   "bookDescription": "介绍支持Android、iOS等多个平台的通用逆向工具：Frida。先是Frida概览，包括Frida的代码和架构，以及相关文档和案例和资料，包括codeshare。再介绍如何在PC端和移动端安装和升级Frida。然后是如何使用Frida，包括通用的逻辑，比如调试目标的方式，以及写js脚本；然后是Frida的细分模块，包括iOS的ObjC，包括参数、变量类型、通过举例去详细解释如何用Frida去hook调试ObjC的类的函数、以及工具类函数、frida的命令行、frida-tools工具集合，包括frida-trace、frida-ps、frida-ls、frida-ls-devices等；接着是frida-server、Frida的Stalker、js。接着整理一些Frida开发期间的经验和心得，包括console.log打印日志、常见的一些问题，包括各种报错、导致iPhone重启、导致app崩溃等等。然后去整理一些用到了Frida的工具；接着整理Frida的一些具体的典型的用途，包括反调试、辅助反混淆、绕过参数加密、逆向各种app。最后贴出参考资料。"

@@ -55,7 +55,10 @@
   * [Frida basics - Frida HandBook (learnfrida.info)](https://learnfrida.info/basic_usage/)
   * [Frida HandBook](https://learnfrida.info/)
 * 使用案例
-  * [frida-presentations](https://github.com/frida/frida-presentations)
+  * 官网、官网
+    * （Frida作者）oleavr写的，实例代码
+      * [oleavr/frida-agent-example: Example Frida agent written in TypeScript](https://github.com/oleavr/frida-agent-example)
+    * [frida-presentations](https://github.com/frida/frida-presentations)
   * [Frida在iOS平台进行OC函数hook的常用方法 | 8Biiit's Blog](https://8biiit.github.io/2019/08/12/Frida/)
   * [personal_script/Frida_script at master · lich4/personal_script · GitHub](https://github.com/lich4/personal_script/tree/master/Frida_script)
     * ios_utils
