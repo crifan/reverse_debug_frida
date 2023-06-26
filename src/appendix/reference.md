@@ -32,7 +32,6 @@
 * 【已解决】越狱后的iPhone11中卸载和重新安装Frida
 * 【已确认】iPhone11中重新确认新版XinaA和新版Frida是否可以正常使用
 * 【已解决】Frida启动js脚本报错：Error could not parse line 1 expecting ,
-* 【已解决】frida去hook函数时确保已执行函数但不触发不输出日志log
 * 【基本解决】Frida的Stalker.follow中events的含义和用法
 * 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
 * 【已解决】iOS逆向：frida调试hook类NSXPCConnection的setExportedObject
@@ -43,7 +42,6 @@
 * 【记录】iOS逆向akd：frida-trace追踪出iPhone8中iOS15.0中账号验证的函数调用过程结果
 * 【已解决】Mac中如何使用frida的Stalker的js脚本
 * 【已解决】Frida调试时如何指定进程
-* 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
 * 【已解决】Frida中如何通过frida启动被测app程序iOS版抖音
 * 【已解决】用frida去hook报错：Failed to spawn unable to find process with name
 * 【已解决】frida调试进程直接运行不要每次都输入%resume才运行
@@ -98,6 +96,28 @@
 * 【记录】分析Frida的Stalker对于___lldb_unnamed_symbol2575代码追踪的输出结果
 * 【记录】学习Frida官网文档Stalker搞懂基本用法和逻辑
 * 【已解决】Frida的Stalker中去判断是否是函数的代码指令的逻辑
+* 【整理】Frida中对于js代码的支持不够完美
+* 【规避解决】frida中console.log打印时参数格式化无效
+* 【未解决】Frida中js的console.log日志打印格式化参数
+* 【已解决】frida的脚本中console.log打印args报错：RangeError invalid array index
+* 【已解决】给Frida的Stalker中输出log日志到文件
+* 【已解决】Frida的Stalker中优化hook到指令时的log日志输出
+* 【已解决】js中console.log如何打印对象[object Object]
+* 【已解决】Frida启动js脚本报错：Error could not parse line 1 expecting ,
+* 【已解决】Frida的Stalker中调试报错：Fatal Python error _enter_buffered_busy: could not acquire lock
+* 【未解决】frida报错：Failed to spawn: the connection is closed
+* 【已解决】frida启动抖音app报错：Failed to attach need Gadget to attach on jailed iOS
+* 【已解决】frida运行报错：Waiting for USB device to appear
+* 【未解决】Mac中用Frida但报错Failed to enumerate processes the connection is closed且导致iPhone重启
+* 【未解决】frida-server运行报错：Failed to spawn this feature requires an iOS Developer Disk Image to be mounted
+* 【已解决】frida去hook函数报错：TypeError cannot read property implementation of undefined
+* 【未解决】frida中hook函数打印参数值时最后app崩溃frida输出Process terminated
+* 【未解决】frida去hook监控iOS的ObjC函数时经常会崩溃Process terminated
+* 【未解决】研究frida崩溃Process terminated：通过Preferences的崩溃日志找原因
+* 【记录】Frida调试导致iPhone8重启而丢失palera1n越狱
+* 【未解决】Mac中Frida报错且导致iPhone重启：重新修复XinaA15越狱环境
+* 【未解决】frida导致iPhone重启：从崩溃日志ips文件分析去找可能原因
+* 【未解决】Mac中用Frida但报错Failed to enumerate processes the connection is closed且导致iPhone重启
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
