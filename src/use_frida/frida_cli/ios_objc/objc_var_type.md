@@ -118,7 +118,10 @@
   * 语法：`iosObjcObj.propertyName()`
   * 举例
     * 获取[NSXPCConnection的serviceName](https://developer.apple.com/documentation/foundation/nsxpcconnection/1413751-servicename)
-      * 对于Objc的Object对象：`argSelfObj:  <NSXPCConnection: 0x105744c00> connection from pid 46847 on mach service named com.apple.ak.auth.xpc`
+      * 对于Objc的Object对象：
+        ```bash
+        argSelfObj:  <NSXPCConnection: 0x105744c00> connection from pid 46847 on mach service named com.apple.ak.auth.xpc
+        ```
         * 去获取其serviceName属性的代码：
           ```js
             const connnServiceNameNSStr = argSelfObj.serviceName();

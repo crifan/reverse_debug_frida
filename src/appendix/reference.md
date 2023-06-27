@@ -118,9 +118,53 @@
 * 【未解决】Mac中Frida报错且导致iPhone重启：重新修复XinaA15越狱环境
 * 【未解决】frida导致iPhone重启：从崩溃日志ips文件分析去找可能原因
 * 【未解决】Mac中用Frida但报错Failed to enumerate processes the connection is closed且导致iPhone重启
+* 【未解决】Frida调试Apple Store报错：Failed to attach missing gProcessInfo
+* 【已解决】frida-ios-dump给iOS 15.1的iPhone中app砸壳报错：missing gProcessInfo
+* 【已解决】研究frida中是否存在导入外部变量gProcessInfo
+* 【未解决】研究Frida中Missing gProcessInfo出错的逻辑和原因
+* 【已解决】研究二进制/usr/lib/dyld中是否包含或导出变量_gProcessInfo
+* 【记录】dyld源码中的gProcessInfo
+* 【已解决】Frida源码中找到了：gProcessInfo
+* 【未解决】找Frida中iOS的arm6e4：从Frida源码和build中找
+* 【未解决】找Frida中iOS的arm6e4：从Frida的github中找
+* 【未解决】找Frida中iOS的arm6e4：自己给make加echo打印日志调试
+* 【未解决】找Frida中iOS的arm6e4：从github的ci的workflow中找arm64e
+* 【未解决】找Frida中iOS的arm6e4：从编译日志中的Downloading ios-arm64入手
+* 【未解决】找Frida中iOS的arm6e4：make时如何传入arm64e的arch参数
+* 【未解决】找Frida中iOS的arm6e4：从make编译时的log日志入手
+* 【基本解决】iOS 15.1的iPhone11中frida-server所用架构是arm64e还是arm64
+* 【未解决】自己编译出的arm64的frida-server能否在iPhone11正常运行
+* 【未解决】用frida源码自己编译出frida的iOS的包含frida-server的deb安装包
+* 【未解决】自己编译出包含arm64和arm64e的FAT格式的frida-server二进制
+* 【未解决】自己修改编译frida-core源码以尝试解决Frida的Missing gProcessInfo问题
+* 【未解决】Frida中如何编译出iOS的arm64e的frida-server二进制
+* 【未解决】自己编译Frida的frida-core代码生成可用二进制frida-server
+* 【已解决】iOS逆向：如何写Frida的Stalker代码去监控函数___lldb_unnamed_symbol2575$$akd的指令运行
+* 【未解决】iOS逆向：如何反代码混淆反混淆去混淆
+* 【未解决】Mac中Frida启动抖音app进程并调试和hook函数
+* 【未解决】用Frida的frida-trace去hook函数iOS版抖音
+* 【未解决】frida调试抖音app去hook函数：_dyld_get_image_name
+* 【未解决】frida去hook函数_dyld_get_image_name时打印参数为字符串
+* 【未解决】用Frida动态调试iOS版抖音app
+* 【未解决】Mac中用Frida调试iOS版抖音
+* 【已解决】用frida启动hook调试iOS抖音app
+* 【未解决】尝试Frida的stalker能否修复抖音AwemeCore中函数名常量字符串
+* 【记录】iOS逆向Apple账号：用frida和frida-trace去hook打印更多账号相关函数调用
+* 【无法解决】iOS逆向Apple账号：用frida的ssl bypyass脚本尝试解决Charles抓包代理报错
+* 【未解决】iOS逆向Apple账号：用Frida去监控NSURL去调试Apple账号登录过程
+* 【未解决】iOS逆向Apple账号：用Frida去调试NSURL核心网络请求函数调用
+* 【未解决】iOS逆向Apple账号：分析研究frida抓包到的Apple账号登录过程和网络相关的内容
+* 【记录】用frida动态调试重新打包后的安卓迅雷apk
+* 【未解决】Mac中搭建Frida的动态调试安卓apk的开发环境
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
+*  [某金融app的加解密hook+rpc+绕过SSLPinning抓包 - T00ls.Com](https://www.t00ls.com/articles-68689.html)
+* [【保姆级教学】某金融app FRIDA hook加解密算法+jsrpc=乱杀 - T00ls.Com](https://www.t00ls.com/articles-68782.html)
+* [利用frida快速解决APP中某tong加密 | 大熊の笔记](https://l3b1anc.github.io/android/2020/11/25/%E5%88%A9%E7%94%A8frida%E5%BF%AB%E9%80%9F%E8%A7%A3%E5%86%B3APP%E4%B8%AD%E6%9F%90tong%E5%8A%A0%E5%AF%86.html)
+* [frida跑加密算法和绕过抓包验证_不想写程序(╥╯^╰╥)的博客-CSDN博客](https://blog.csdn.net/cutjgh/article/details/118145907)
+* [使用Frida绕过iOS反调试 | La0s](https://la0s.github.io/2019/03/07/anti_ptrace/)
+* [一例简单的frida反调试绕过 - 网安](https://www.wangan.com/p/7fy78y0789a8c8ba)
 * [【iOS逆向】某营业厅算法分析_小陈_InfoQ写作社区](https://xie.infoq.cn/article/4c1fe5ca87269a7a5ac1645fc)
 * [[原创] sktrace：基于 Frida Stalker 的 trace 工具-Android安全-看雪-安全社区|安全招聘|kanxue.com](https://bbs.kanxue.com/thread-264680.htm)
 * [oleavr (Ole André Vadla Ravnås)](https://github.com/oleavr)
@@ -200,4 +244,5 @@
 * [【Frida 实战】API查找器和拦截器的组合使用 – exchen's blog](https://www.exchen.net/frida-apiresolver-interceptor.html)
 * [Stalker的API](https://frida.re/docs/javascript-api/#stalker)
 * [DefinitelyTyped/index.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/frida-gum/index.d.ts)
+* [Tampering and Reverse Engineering on iOS - OWASP MASTG (gitbook.io)](https://mobile-security.gitbook.io/mobile-security-testing-guide/ios-testing-guide/0x06c-reverse-engineering-and-tampering)
 * 

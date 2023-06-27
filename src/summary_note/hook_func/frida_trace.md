@@ -60,7 +60,13 @@ frida-trace -U -F com.apple.Preferences -i "AppleAccount\!" -i "AppleAccountUI\!
 比如：
 
 * `Mac`中`iTerm2`中，右键当前tab页顶部-》右键-》`Edit Session`->`Terminal`->`Scrollback Buffer`->`Scrollback line`：改为足够大的数值，比如`5000`
-  * ![iterm2_scrollback_line_large](../../assets/img/iterm2_scrollback_line_large.png)
+  * ![iterm2_scrollback_line_large](../../assets/img/iterm2_scrollback_line_large.jpg)
+
+甚至如果log日志特别长，那么可以考虑：设置为无限行数都保留 == `Unlimited scrollback`
+
+![iterm2_unlimited_scrollback](../../assets/img/iterm2_unlimited_scrollback.jpg)
+
+这样就完全不用担心日志行数太多，前面的日志被冲掉，看不到的问题了。
 
 ## 通过修改特定函数的hook的js去打印参数值
 

@@ -55,7 +55,7 @@ frida-trace -U -n akd -O akdObjcMethods.txt
 
 ### log日志
 
-```bash
+```txt
 ...
 -[NSXPCStore dealloc]: Loaded handler at "/Users/crifan/dev/dev_root/iosReverse/AppleStore/AuthKit_akd/dynamicDebug/frida/scripts/__handlers__/NSXPCStore/dealloc.js"
 -[NSXPCStore setIdentifier:]: Loaded handler at "/Users/crifan/dev/dev_root/iosReverse/AppleStore/AuthKit_akd/dynamicDebug/frida/scripts/__handlers__/NSXPCStore/setIdentifier_.js"

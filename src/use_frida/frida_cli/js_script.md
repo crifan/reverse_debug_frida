@@ -28,7 +28,7 @@
 * 可以自己写
   * 比如 [iOS的ObjC](../../frida_example/frida/ios_objc/README.md) 中的各种例子
 * 也可以，借用别人已有的
-  * 比如 [Frida Codeshare](../../frida_overview/doc_refer/frida_codeshare.md)
+  * 比如 [Frida Codeshare](../../frida_example/online_other_case/frida_codeshare.md)
 
 ## js脚本中的内容
 
