@@ -156,6 +156,7 @@
 * 【未解决】iOS逆向Apple账号：分析研究frida抓包到的Apple账号登录过程和网络相关的内容
 * 【记录】用frida动态调试重新打包后的安卓迅雷apk
 * 【未解决】Mac中搭建Frida的动态调试安卓apk的开发环境
+* 【已解决】iPhone和Mac中升级Frida到最新版16.1.1
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 

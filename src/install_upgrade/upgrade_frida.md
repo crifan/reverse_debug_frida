@@ -32,6 +32,10 @@
       ```bash
       pip install --upgrade frida
       ```
+      * 如果需要，也去同时升级`frida-tools`
+        ```bash
+        pip install --upgrade frida-tools
+        ```
 * 移动端
   * iPhone
     * 用（`Cydia`/`Sileo`等）包管理器，升级`Frida`到最新版
