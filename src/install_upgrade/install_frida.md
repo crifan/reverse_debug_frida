@@ -68,6 +68,12 @@
             * ![frida_installed_files](../assets/img/frida_installed_files.png)
           * Cydia
             * ![cydia_frida_files](../assets/img/cydia_frida_files.jpg)
+  * 已root的安卓
+    * 安装步骤
+      * 概述
+        * 安装`Magisk`插件：[MagiskFrida](https://github.com/ViRb3/magisk-frida)
+      * 详解
+        * [初始化Frida开发环境 · Android逆向：动态调试 (crifan.org)](https://book.crifan.org/books/android_re_dynamic_debug/website/frida_debug_android/init_frida_dev_env.html)
 
 ## 常见问题
 
