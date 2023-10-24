@@ -66,18 +66,28 @@ Stack:
  * Config && Settings
 *******************************************************************************/
 
-// var isUseCache = false
-var isUseCache = true
+// Print Function Stack Call
+let isUseCache = true
+
+// print only once stack for every function
+let isPrintOnlyOnceStack = true
+
+let cfgPrintOnceStackExceptionList = [
+	"+[NSURLRequest requestWithURL:]",
+]
 
 /*******************************************************************************
  * Global Variables
 *******************************************************************************/
+
+var gPrintedStackDict = {}
 
 var gAddrToModuleInfoDict = {}
 var gModulePathToSlideDict = {}
 var gModulePathToClassesDict = {}
 var gModulePathAddrToSymbolDict = {}
 var gClassnameToAllMethodsDict = {}
+
 
 var free = null
 var objc_getClass = null
@@ -90,7 +100,6 @@ var _dyld_get_image_name = null
 var _dyld_get_image_vmaddr_slide = null
 var objc_copyClassNamesForImage = null
 
-
 /******************** iOS Common Lib Functions ********************/
 
 function initCommonLibFunctions(){
@@ -102,35 +111,35 @@ function initCommonLibFunctions(){
 		'void',
 		['pointer']
 	)
-	XLOG("free=" + free)
+	console.log("free=" + free)
 
 	objc_getClass = new NativeFunction(
 		Module.findExportByName(null, 'objc_getClass'),
 		'pointer',
 		['pointer']
 	)
-	XLOG("objc_getClass=" + objc_getClass)
+	console.log("objc_getClass=" + objc_getClass)
 
 	class_copyMethodList = new NativeFunction(
 		Module.findExportByName(null, 'class_copyMethodList'),
 		'pointer',
 		['pointer', 'pointer']
 	)
-	XLOG("class_copyMethodList=" + class_copyMethodList)
+	console.log("class_copyMethodList=" + class_copyMethodList)
 
 	objc_getMetaClass = new NativeFunction(
 		Module.findExportByName(null, 'objc_getMetaClass'),
 		'pointer',
 		['pointer']
 	)
-	XLOG("objc_getMetaClass=" + objc_getMetaClass)
+	console.log("objc_getMetaClass=" + objc_getMetaClass)
 
 	method_getName = new NativeFunction(
 		Module.findExportByName(null, 'method_getName'),
 		'pointer',
 		['pointer']
 	)
-	XLOG("method_getName=" + method_getName)
+	console.log("method_getName=" + method_getName)
 
 	/*
 	int dladdr(const void *, Dl_info *);
@@ -148,7 +157,7 @@ function initCommonLibFunctions(){
 		'int',
 		['pointer','pointer']
 	)
-	XLOG("dladdr=" + dladdr)
+	console.log("dladdr=" + dladdr)
 
 	// uint32_t  _dyld_image_count(void)
 	_dyld_image_count = new NativeFunction(
@@ -156,7 +165,7 @@ function initCommonLibFunctions(){
 		'uint32',
 		[]
 	)
-	XLOG("_dyld_image_count=" + _dyld_image_count)
+	console.log("_dyld_image_count=" + _dyld_image_count)
 
 	// const char*  _dyld_get_image_name(uint32_t image_index) 
 	_dyld_get_image_name = new NativeFunction(
@@ -164,7 +173,7 @@ function initCommonLibFunctions(){
 		'pointer',
 		['uint32']
 	)
-	XLOG("_dyld_get_image_name=" + _dyld_get_image_name)
+	console.log("_dyld_get_image_name=" + _dyld_get_image_name)
 
 
 	// intptr_t   _dyld_get_image_vmaddr_slide(uint32_t image_index)
@@ -173,7 +182,7 @@ function initCommonLibFunctions(){
 		'pointer',
 		['uint32']
 	)
-	XLOG("_dyld_get_image_vmaddr_slide=" + _dyld_get_image_vmaddr_slide)
+	console.log("_dyld_get_image_vmaddr_slide=" + _dyld_get_image_vmaddr_slide)
 
 	// const char * objc_copyClassNamesForImage(const char *image, unsigned int *outCount)
 	objc_copyClassNamesForImage = new NativeFunction(
@@ -181,7 +190,7 @@ function initCommonLibFunctions(){
 		'pointer',
 		['pointer', 'pointer']
 	);
-	XLOG("objc_copyClassNamesForImage=" + objc_copyClassNamesForImage)
+	console.log("objc_copyClassNamesForImage=" + objc_copyClassNamesForImage)
 }
 
 // https://github.com/4ch12dy/FridaLib/blob/master/iOS/iOSFridaLib.js
@@ -204,6 +213,11 @@ function format(str,width){
 			str += " "
 	}
 	return str
+}
+
+function getExecFileName(modulePath){
+	modulePath += ""
+	return modulePath.split("/").pop()
 }
 
 // get module info from address
@@ -510,16 +524,13 @@ function find_symbol_from_address(modulePath, addr){
 	return symbol
 }
 
-function printFunctionCallStack_symbol(context){
-	XLOG("============================================printFunctionCallStack_symbol=====================================")
-	function getExeFileName(modulePath){
-			modulePath += ""
-			return modulePath.split("/").pop()
-	}
+
+function generateFunctionCallStackList(context){
+	var functionCallList = new Array()
 
 	var mainPath = ObjC.classes.NSBundle.mainBundle().executablePath().UTF8String()
 	// XLOG("mainPath=" + mainPath)
-	var mainModuleName = getExeFileName(mainPath)
+	var mainModuleName = getExecFileName(mainPath)
 	// XLOG("mainModuleName=" + mainModuleName)
 
 	var backtrace = Thread.backtrace(context, Backtracer.ACCURATE).map(DebugSymbol.fromAddress)
@@ -577,12 +588,43 @@ function printFunctionCallStack_symbol(context){
 			// XLOG("new curSym=" + curSym)
 		}
 
-		XLOG(format(i, 4)+format(getExeFileName(curModulePath), 20)+"mem:"+format(ptr(curAddr),13)+"file:"+format(ptr(fileAddr),13)+format(curSym,80))
+		var curFunctionCallDict = {
+			"curModulePath": curModulePath,
+			"curAddr": curAddr,
+			"fileAddr": fileAddr,
+			"curSym": curSym,
+		}
+		functionCallList.push(curFunctionCallDict)
 	}
-	XLOG("==============================================================================================================")
-	return
+
+	return functionCallList
 }
 
+function generateFunctionCallStackStr(functionCallList){
+	var functionCallStackStr = "------------------------ printFunctionCallStack_symbol  ------------------------"
+	functionCallStackStr += "\n"
+	for (var i = 0;i < functionCallList.length; i++){
+		var curFunctionCallDict = functionCallList[i]
+		var curModulePath = curFunctionCallDict["curModulePath"]
+		var curAddr = curFunctionCallDict["curAddr"]
+		var fileAddr = curFunctionCallDict["fileAddr"]
+		var curSym = curFunctionCallDict["curSym"]
+		var executableFilename = getExecFileName(curModulePath)
+		let execMaxWidth = 20
+		// let execMaxWidth = 25
+		var curFuncCallStr = format(i, 4)+format(executableFilename, execMaxWidth)+"mem:"+format(ptr(curAddr),13)+"file:"+format(ptr(fileAddr),13)+format(curSym,80)
+		functionCallStackStr += curFuncCallStr + "\n"
+	}
+	functionCallStackStr += "--------------------------------------------------------------------------------"
+	return functionCallStackStr
+}
+
+function printFunctionCallStack_symbol(context){
+	var functionCallStackList = generateFunctionCallStackList(context)
+	var functionCallStackStr = generateFunctionCallStackStr(functionCallStackList)
+	console.log(functionCallStackStr)
+	return functionCallStackStr
+}
 ```
 
 调用举例：
@@ -597,35 +639,71 @@ initCommonLibFunctions()
 ...
 				Interceptor.attach(curMethod.implementation, {
 					onEnter: function(args) {
-						console.log("==================== [*] Detected call to: " + iOSObjCallStr);
+						// console.log("==================== [*] Detected call to: " + iOSObjCallStr);
+						var logstr = "Called: " + iOSObjCallStr
+						var lineStr = generateLineStr(logstr)
+						console.log(lineStr)
 
-						// printFunctionCallStack_addr(this.context)
-						printFunctionCallStack_symbol(this.context)
+						var shouldPrintStack = true
+						if (iOSObjCallStr in gPrintedStackDict){
+							// console.log("iOSObjCallStr=" + iOSObjCallStr + " in gPrintedStackDict=" + toJsonStr(gPrintedStackDict.keys))
+							if (isPrintOnlyOnceStack){
+								// if (iOSObjCallStr in cfgPrintOnceStackExceptionList){
+								if (isItemInList(iOSObjCallStr, cfgPrintOnceStackExceptionList)){
+									// console.log("iOSObjCallStr=" + iOSObjCallStr + " in cfgPrintOnceStackExceptionList=" + toJsonStr(cfgPrintOnceStackExceptionList))
+									shouldPrintStack = true
+								} else {
+									shouldPrintStack = false
+								}
+							}
+						}
+
+						// console.log("shouldPrintStack=" + shouldPrintStack)
+
+						if (shouldPrintStack) {
+							// printFunctionCallStack_addr(this.context)
+
+							// printFunctionCallStack_symbol(this.context)
+							var functionCallStackList = generateFunctionCallStackList(this.context)
+							var functionCallStackStr = generateFunctionCallStackStr(functionCallStackList)
+							console.log(functionCallStackStr)
+
+							gPrintedStackDict[iOSObjCallStr] = functionCallStackStr
+						}
 ...
 ```
 
-输出：
+（相关）输出：
 
 ```bash
-==================== [*] Detected call to: +[NSURLRequest requestWithURL:]
-[*] ============================================printFunctionCallStack_symbol=====================================
-[*] 0   SharedModules       mem:0x106071910  file:0xc29910     +[WACertPinning sharedPinnedWhatsAppCertificateWithoutDomainValidation]
-[*] 1   WhatsApp            mem:0x1031c4cb4  file:0x102304cb4  +[WARegistrationURLBuilder preChatdABPropURLRequestWithPhoneNumber:abHash:]
-[*] 2   WhatsApp            mem:0x102a99ff4  file:0x101bd9ff4  -[WACompanionModeGatingManager fetchPhoneCompanionAbPropValue:]
-[*] 3   WhatsApp            mem:0x102a99f80  file:0x101bd9f80  -[WACompanionModeGatingManager shouldShowPhoneCompanionEntryPointWithCompletion:]
-[*] 4   WhatsApp            mem:0x10318a1fc  file:0x1022ca1fc  -[WAVerificationRegistrationController fetchPhoneCompanionEntryPointPreChatdAbProp]
-[*] 5   WhatsApp            mem:0x103189ee4  file:0x1022c9ee4  -[WAVerificationRegistrationController didAcceptedTOSMoveToNextScreen]
-[*] 6   WhatsApp            mem:0x1031816a8  file:0x1022c16a8  -[WAConsumerWelcomeViewController acceptAction:]
-[*] 7   UIKitCore           mem:0x1952e99ac  file:0x1845199ac  -[UIApplication sendAction:to:from:forEvent:]
-[*] 8   UIKitCore           mem:0x194d1ffbc  file:0x183f4ffbc  -[UIControl sendAction:to:forEvent:]
-[*] 9   UIKitCore           mem:0x194d20320  file:0x183f50320  -[UIControl _sendActionsForEvents:withEvent:]
-[*] 10  UIKitCore           mem:0x194d1f33c  file:0x183f4f33c  -[UIControl touchesEnded:withEvent:]
-[*] 11  UIKitCore           mem:0x195323050  file:0x184553050  -[UIWindow _sendTouchesForEvent:]
-[*] 12  UIKitCore           mem:0x195324390  file:0x184554390  -[UIWindow sendEvent:]
-[*] 13  UIKitCore           mem:0x195300a9c  file:0x184530a9c  -[UIApplication sendEvent:]
-[*] 14  WhatsApp            mem:0x1028f87b8  file:0x101a387b8  -[WAApplication sendEvent:]
-[*] 15  UIKitCore           mem:0x195378c20  file:0x1845a8c20  __dispatchPreprocessedEventFromEventQueue
-[*] ==============================================================================================================
+======================================= Called: +[NSURLRequest requestWithURL:]  =======================================
+------------------------ printFunctionCallStack_symbol  ------------------------
+0   SharedModules       mem:0x1072fd910  file:0xc29910     +[WACertPinning sharedPinnedWhatsAppCertificateWithoutDomainValidation]
+1   WhatsApp            mem:0x104584cb4  file:0x102304cb4  +[WARegistrationURLBuilder preChatdABPropURLRequestWithPhoneNumber:abHash:]
+2   WhatsApp            mem:0x10458befc  file:0x10230befc  -[WARegistrationManager requestPreChatdABPropsForPhoneNumber:userContext:completion:]
+3   WhatsApp            mem:0x1045876a0  file:0x1023076a0  -[WARegistrationManager performSameDeviceCheckForSession:updateRegistrationTokenIfNecessary:fetchPreChatdABProps:withCompletion:]
+4   WhatsApp            mem:0x10455c220  file:0x1022dc220  -[WAPhoneInputViewController performDeviceCheckForPhoneNumber:session:isFirstCheck:]
+5   WhatsApp            mem:0x10455bff8  file:0x1022dbff8  -[WAPhoneInputViewController performSameDeviceCheckForPhoneNumber:]
+6   WhatsApp            mem:0x10455f658  file:0x1022df658  maybe C function?
+7   WhatsApp            mem:0x10453e038  file:0x1022be038  +[WATwoFactorWipeToken tokenFromResponseDictionary:]
+8   WhatsApp            mem:0x10455e834  file:0x1022de834  -[WAPhoneInputViewController doneWithVideo:]
+9   WhatsApp            mem:0x10455f758  file:0x1022df758  maybe C function?
+10  SharedModules       mem:0x106a775b0  file:0x3a35b0     -[WDSButtonConfiguration setDidTap:]
+11  SharedModules       mem:0x106b451e8  file:0x4711e8     +[WDSViewCallback callback:]
+12  SharedModules       mem:0x106aacb84  file:0x3d8b84     -[_TtCC15UILibraryShared6Button12NativeButton intrinsicContentSize]
+13  SharedModules       mem:0x106aacbc0  file:0x3d8bc0     -[_TtCC15UILibraryShared6Button12NativeButton didTap]
+14  UIKitCore           mem:0x1c14b99ac  file:0x1845199ac  -[UIApplication sendAction:to:from:forEvent:]
+15  UIKitCore           mem:0x1c0eeffbc  file:0x183f4ffbc  -[UIControl sendAction:to:forEvent:]
+--------------------------------------------------------------------------------
+argCount:  1
+---------------- [0] curArgPtr=0x283c61e00  ----------------
+curArgPtrObj: className= NSURL, value= https://v.whatsapp.net/v2/reg_onboard_abprop?cc=1&in=8784650468&rc=0&ab_hash=1zduBG
 ```
 
-![frida_js_ios_callstack_detail_example](../../../assets/img/frida_js_ios_callstack_detail_example.png)
+* 截图
+  * 新
+    * ![frida_ios_call_stack_symbol](../../../assets/img/frida_ios_call_stack_symbol.png)
+  * 旧
+    * ![frida_js_ios_callstack_detail_example](../../../assets/img/frida_js_ios_callstack_detail_example.png)
+
+

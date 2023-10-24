@@ -43,7 +43,7 @@ connnServiceNameNSStr:  com.apple.ak.auth.xpc
 connnServiceNameJsStr:  com.apple.ak.auth.xpc
 ```
 
-## `toiOSObjcCall`
+## `toiOSObjcCall`：把Firda的ObjC函数写法，转换成ObjC的函数写法
 
 ```js
 // convert from frida function call to ObjC function call
@@ -83,7 +83,7 @@ iOSObjCallStr= -[NSXPCConnection setExportedObject:]
 * `"NSURL"`, `"+ fileURLWithPath:isDirectory:"` => `+[NSURL fileURLWithPath:isDirectory:]`
 * `"NSURL"`, `"- initFileURLWithPath:isDirectory:"` => `"-[NSURL initFileURLWithPath:isDirectory:]"`
 
-## `toFridaObjcCall`
+## `toFridaObjcCall`：把ObjC函数写法，转换成Frida的ObjC函数写法
 
 ```js
 // convert from ObjC function call to frida function call
@@ -254,6 +254,8 @@ _dyld_get_image_vmaddr_slide=0x191068004
 objc_copyClassNamesForImage=0x190f97e68
 ```
 
+说明：
+
 后续其他地方，即可调用这些函数：
 
 ```js
@@ -265,4 +267,3 @@ function get_info_form_address(address){
 	var dl_info = Memory.alloc(Process.pointerSize*4);
 	dladdr(ptr(address), dl_info)
 ```
-
