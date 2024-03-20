@@ -1,3 +1,0 @@
-# Interceptor=hook函数
-
-此处去介绍如何用Frida的Interceptor去hook拦截iOS的ObjC的函数的实际案例。
