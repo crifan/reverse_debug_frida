@@ -163,6 +163,8 @@
 * 【已解决】Frida中js打印日志log优化：自动生成中间字符串加上左右对称的单行log日志
 * 【已解决】Frida打印iOS函数调用堆栈：优化同一函数只输出一次
 * 【已解决】iOS逆向WhatsApp：加了代理后Frida去hook却始终崩溃
+* 【已解决】Frida去hook抖音报错：Error java.lang.ClassNotFoundException Didn't find class on path DexPathList zip file
+* 【已解决】Frida去hook安卓类找不到：Error java.lang.ClassNotFoundException Didn't find class com.android.server.pm.Settings
 * 
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
