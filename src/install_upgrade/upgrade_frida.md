@@ -37,7 +37,11 @@
         pip install --upgrade frida-tools
         ```
 * 移动端
-  * iPhone
+  * Android
+    * 重复之前
+      * 安装`Magisk`插件：[MagiskFrida](https://github.com/ViRb3/magisk-frida)
+    * 的步骤，只是下载时，下载**最新版本**的`MagiskFrida`的zip包即可
+  * iOS(iPhone)
     * 用（`Cydia`/`Sileo`等）包管理器，升级`Frida`到最新版
 
 ### 如何安装指定版本的Frida？

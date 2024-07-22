@@ -166,6 +166,7 @@
 * 【已解决】Frida去hook抖音报错：Error java.lang.ClassNotFoundException Didn't find class on path DexPathList zip file
 * 【已解决】Frida去hook安卓类找不到：Error java.lang.ClassNotFoundException Didn't find class com.android.server.pm.Settings
 * 
+* [初始化Frida开发环境 · Android逆向：动态调试 (crifan.org)](https://book.crifan.org/books/android_re_dynamic_debug/website/frida_debug_android/init_frida_dev_env.html)
 * [frida-ios-dump · iOS逆向开发：砸壳ipa (crifan.org)](https://book.crifan.org/books/ios_re_crack_shell_ipa/website/crack_example/frida_ios_dump/)
 * 
 *  [某金融app的加解密hook+rpc+绕过SSLPinning抓包 - T00ls.Com](https://www.t00ls.com/articles-68689.html)
