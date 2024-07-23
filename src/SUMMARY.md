@@ -47,6 +47,7 @@
   * [通用](common_issue/universal/README.md)
     * [Process terminated](common_issue/universal/process_terminated.md)
     * [unable to find process with name](common_issue/universal/unable_find_process.md)
+    * [unable to attach to the specified proces](common_issue/universal/unable_to_attach_to_the_specified_proces.md)
     * [--no-pause和--pause](common_issue/universal/pause_or_no_pause.md)
     * [Bad access due to invalid address](common_issue/universal/bad_access_invalid_address.md)
     * [ValueError file descriptor cannot be a negative integer](common_issue/universal/file_descriptor_cannot_negative_integer.md)
