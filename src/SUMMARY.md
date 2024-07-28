@@ -51,6 +51,7 @@
     * [--no-pause和--pause](common_issue/universal/pause_or_no_pause.md)
     * [Bad access due to invalid address](common_issue/universal/bad_access_invalid_address.md)
     * [ValueError file descriptor cannot be a negative integer](common_issue/universal/file_descriptor_cannot_negative_integer.md)
+    * [卡死在Spawning](common_issue/universal/stuck_spawning.md)
   * [iOS](common_issue/ios/README.md)
     * [XinaA15中的frida](common_issue/ios/xinaa15_frida.md)
     * [need Gadget to attach on jailed iOS](common_issue/ios/need_gadget_attach.md)
