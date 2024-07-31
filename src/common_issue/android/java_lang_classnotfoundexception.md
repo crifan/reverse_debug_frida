@@ -4,79 +4,21 @@
 
 * 现象
 
-Frida去hook抖音代码：
-
-```js
-  var C660660PrrClassName = "X.C660660Prr"
-  printClassAllMethodsFields(C660660PrrClassName)
-
-  var C660660PrrCls = Java.use(C660660PrrClassName)
-  console.log("C660660PrrCls=" + C660660PrrCls)
-```
-
-报错：
+hook报错：
 
 ```bash
-[Pixel 5::com.ss.android.ugc.aweme ]-> ==========Class: X.C660660Prr ==========
------All Properties-----
-Error: java.lang.ClassNotFoundException: Didn't find class "X.C660660Prr" on path: DexPathList[[zip file "/data/app/~~xV9I545tMKwXybHPamo6Qg==/com.ss.android.ugc.aweme-BgHq0IJA7UjNefZ-mrWL0Q==/base.apk"],nativeLibraryDirectories=[/data/app/~~xV9I545tMKwXybHPamo6Qg==/com.ss.android.ugc.aweme-BgHq0IJA7UjNefZ-mrWL0Q==/lib/arm64, /data/app/~~xV9I545tMKwXybHPamo6Qg==/com.ss.android.ugc.aweme-BgHq0IJA7UjNefZ-mrWL0Q==/base.apk!/lib/arm64-v8a, /system/lib64, /system_ext/lib64]]
-    at <anonymous> (frida/node_modules/frida-java-bridge/lib/env.js:124)
-    at <anonymous> (frida/node_modules/frida-java-bridge/lib/class-factory.js:502)
-    at value (frida/node_modules/frida-java-bridge/lib/class-factory.js:949)
-    at value (frida/node_modules/frida-java-bridge/lib/class-factory.js:954)
-    at _make (frida/node_modules/frida-java-bridge/lib/class-factory.js:165)
-    at use (frida/node_modules/frida-java-bridge/lib/class-factory.js:62)
-    at use (frida/node_modules/frida-java-bridge/index.js:258)
-    at enumProperties (/Users/crifan/dev/dev_root/androidReverse/xxx/ParameterVerify/DouYin/dynamicDebug/frida/hook_douyin.js:62)
-    at printClassAllMethodsFields (/Users/crifan/dev/dev_root/androidReverse/xxx/ParameterVerify/DouYin/dynamicDebug/frida/hook_douyin.js:78)
-    at hookDouyin (/Users/crifan/dev/dev_root/androidReverse/xxx/ParameterVerify/DouYin/dynamicDebug/frida/hook_douyin.js:207)
-    at <anonymous> (/Users/crifan/dev/dev_root/androidReverse/xxx/ParameterVerify/DouYin/dynamicDebug/frida/hook_douyin.js:223)
-    at <anonymous> (frida/node_modules/frida-java-bridge/lib/vm.js:12)
-    at _performPendingVmOps (frida/node_modules/frida-java-bridge/index.js:250)
-    at <anonymous> (frida/node_modules/frida-java-bridge/index.js:242)
-    at apply (native)
-    at ne (frida/node_modules/frida-java-bridge/lib/class-factory.js:677)
-    at <anonymous> (frida/node_modules/frida-java-bridge/lib/class-factory.js:655)
+Error: java.lang.ClassNotFoundException: Didn't find class zzz.xxx on path: DexPathList[[zip file
 ```
-
-![java_lang_classnotfoundexception_didnt_find_class](../../assets/img/java_lang_classnotfoundexception_didnt_find_class.png)
 
 即：找不到类名
 
 * 原因：类名写错了
 
 * 根本原因：
+  * 之前Jadx反编译出的源码中的文件名`sources/zzz/xxx.java`中的`xxx`不是真正的类名
+  * 而注释中`renamed from: yyy`才是真正的类名
 
-之前Jadx反编译出的源码是：
-
-`sources/X/C660660Prr.java`
-
-以为对应的类名是：`X.C660660Prr`
-
-但是实际上是，jadx反编译中的注释
-
-```java
-/* renamed from: X.0Prr, reason: invalid class name and case insensitive filesystem */
-/* loaded from: classes9.dex */
-public final class C660660Prr {
-```
-
-![jadx_comment_rename_from](../../assets/img/jadx_comment_rename_from.png)
-
-中的：`X.0Prr`
-
-* 解决办法：把名字改为真正的Java的类名：`X.0Prr`
-* 具体步骤
-
-代码改为：
-
-```java
-  var C660660PrrClassName = "X.0Prr"
-  printClassAllMethodsFields(C660660PrrClassName)
-
-  var C660660PrrCls = Java.use(C660660PrrClassName)
-  console.log("C660660PrrCls=" + C660660PrrCls)
-```
+* 解决办法：把名字改为真正的Java的类名：`yyy`
 
 ## 情况2：类不在当前hook的二进制中
 
