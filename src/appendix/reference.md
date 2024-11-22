@@ -255,4 +255,7 @@
 * [Stalker的API](https://frida.re/docs/javascript-api/#stalker)
 * [DefinitelyTyped/index.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/frida-gum/index.d.ts)
 * [Tampering and Reverse Engineering on iOS - OWASP MASTG (gitbook.io)](https://mobile-security.gitbook.io/mobile-security-testing-guide/ios-testing-guide/0x06c-reverse-engineering-and-tampering)
+* [Cesar Rodriguez | Personal blog (cmrodriguez.me)](https://cmrodriguez.me/blog/methods/)
+* [Dalvik 可执行文件格式  |  Android Open Source Project](https://source.android.com/docs/core/runtime/dex-format?hl=zh-cn)
+* [runtime/native/dalvik_system_DexFile.cc - platform/art - Git at Google (googlesource.com)](https://android.googlesource.com/platform/art/+/refs/heads/master/runtime/native/dalvik_system_DexFile.cc)
 * 

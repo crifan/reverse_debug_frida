@@ -59,6 +59,7 @@
     * [Waiting for USB device to appear](common_issue/ios/waiting_usb_device_appear.md)
     * [unable to intercept function at](common_issue/ios/unable_intercept_function_at.md)
   * [Android](common_issue/android/README.md)
+    * [Java和js变量的映射关系](common_issue/android/java_js_mapping.md)
     * [java.lang.ClassNotFoundException](common_issue/android/java_lang_classnotfoundexception.md)
 * [基于Frida的工具](frida_base_tool/README.md)
 * [Frida的用途](frida_use_case/README.md)
