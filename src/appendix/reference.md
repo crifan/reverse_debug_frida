@@ -15,7 +15,6 @@
 * 【记录】iPhone8中的升级frida到最新版16.0.11
 * 【记录】iOS的iPhone中安装Frida
 * 【已解决】确认palera1n的rootful普通越狱中Frida是否可用
-* 【已解决】frida-ios-dump砸壳ipa报错：need Gadget to attach on jailed iOS
 * 【已解决】frida启动时到底有哪几种attach和spwan启动方式
 * 【整理】再次研究确认Frida调试目标的几种方式
 * 【已解决】iOS逆向：Frida调试设置出现页面弹框：接入互联网以登录iPhone
@@ -31,7 +30,6 @@
 * 【未解决】Frida从16.0.8到升级到新版本16.0.10
 * 【已解决】越狱后的iPhone11中卸载和重新安装Frida
 * 【已确认】iPhone11中重新确认新版XinaA和新版Frida是否可以正常使用
-* 【已解决】Frida启动js脚本报错：Error could not parse line 1 expecting ,
 * 【基本解决】Frida的Stalker.follow中events的含义和用法
 * 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
 * 【已解决】iOS逆向：frida调试hook类NSXPCConnection的setExportedObject
@@ -43,7 +41,6 @@
 * 【已解决】Mac中如何使用frida的Stalker的js脚本
 * 【已解决】Frida调试时如何指定进程
 * 【已解决】Frida中如何通过frida启动被测app程序iOS版抖音
-* 【已解决】用frida去hook报错：Failed to spawn unable to find process with name
 * 【已解决】frida调试进程直接运行不要每次都输入%resume才运行
 * 【未解决】iOS逆向Apple账号：用frida去hook打印所有iOS的ObjC函数调用
 * 【已解决】Frida中js代码中两个地址指针数值相加
@@ -62,10 +59,8 @@
 * 【未解决】frida去hook时判断函数参数的类型是否是NSString
 * 【已解决】frida中打印操作Objc的参数SEL导致程序崩溃
 * 【已解决】Mac中Frida去hook函数：用frida还是frida-trace
-* 【未解决】Mac中frida-trace报错：Failed to spawn unable to find process with name
 * 【已解决】iOS逆向akd：用frida-trace追踪账号验证的过程
 * 【已解决】frida-trace中把更多参数放到参数文件中
-* 【已解决】frida-trace去hook导致app崩溃最后输出Process terminated
 * 【已解决】frida-trace输出log日志到文件中
 * 【记录】iOS逆向Apple账号：分析frida-trace去hook到的下一步按钮内部的函数调用逻辑
 * 【记录】iOS逆向akd：frida-trace追踪出iPhone8中iOS15.0中账号验证的函数调用过程结果
@@ -97,59 +92,6 @@
 * 【记录】学习Frida官网文档Stalker搞懂基本用法和逻辑
 * 【已解决】Frida的Stalker中去判断是否是函数的代码指令的逻辑
 * 【整理】Frida中对于js代码的支持不够完美
-* 【规避解决】frida中console.log打印时参数格式化无效
-* 【未解决】Frida中js的console.log日志打印格式化参数
-* 【已解决】frida的脚本中console.log打印args报错：RangeError invalid array index
-* 【已解决】给Frida的Stalker中输出log日志到文件
-* 【已解决】Frida的Stalker中优化hook到指令时的log日志输出
-* 【已解决】js中console.log如何打印对象[object Object]
-* 【已解决】Frida启动js脚本报错：Error could not parse line 1 expecting ,
-* 【已解决】Frida的Stalker中调试报错：Fatal Python error _enter_buffered_busy: could not acquire lock
-* 【未解决】frida报错：Failed to spawn: the connection is closed
-* 【已解决】frida启动抖音app报错：Failed to attach need Gadget to attach on jailed iOS
-* 【已解决】frida运行报错：Waiting for USB device to appear
-* 【未解决】Mac中用Frida但报错Failed to enumerate processes the connection is closed且导致iPhone重启
-* 【未解决】frida-server运行报错：Failed to spawn this feature requires an iOS Developer Disk Image to be mounted
-* 【已解决】frida去hook函数报错：TypeError cannot read property implementation of undefined
-* 【未解决】frida中hook函数打印参数值时最后app崩溃frida输出Process terminated
-* 【未解决】frida去hook监控iOS的ObjC函数时经常会崩溃Process terminated
-* 【未解决】研究frida崩溃Process terminated：通过Preferences的崩溃日志找原因
-* 【记录】Frida调试导致iPhone8重启而丢失palera1n越狱
-* 【未解决】Mac中Frida报错且导致iPhone重启：重新修复XinaA15越狱环境
-* 【未解决】frida导致iPhone重启：从崩溃日志ips文件分析去找可能原因
-* 【未解决】Mac中用Frida但报错Failed to enumerate processes the connection is closed且导致iPhone重启
-* 【未解决】Frida调试Apple Store报错：Failed to attach missing gProcessInfo
-* 【已解决】frida-ios-dump给iOS 15.1的iPhone中app砸壳报错：missing gProcessInfo
-* 【已解决】研究frida中是否存在导入外部变量gProcessInfo
-* 【未解决】研究Frida中Missing gProcessInfo出错的逻辑和原因
-* 【已解决】研究二进制/usr/lib/dyld中是否包含或导出变量_gProcessInfo
-* 【记录】dyld源码中的gProcessInfo
-* 【已解决】Frida源码中找到了：gProcessInfo
-* 【未解决】找Frida中iOS的arm6e4：从Frida源码和build中找
-* 【未解决】找Frida中iOS的arm6e4：从Frida的github中找
-* 【未解决】找Frida中iOS的arm6e4：自己给make加echo打印日志调试
-* 【未解决】找Frida中iOS的arm6e4：从github的ci的workflow中找arm64e
-* 【未解决】找Frida中iOS的arm6e4：从编译日志中的Downloading ios-arm64入手
-* 【未解决】找Frida中iOS的arm6e4：make时如何传入arm64e的arch参数
-* 【未解决】找Frida中iOS的arm6e4：从make编译时的log日志入手
-* 【基本解决】iOS 15.1的iPhone11中frida-server所用架构是arm64e还是arm64
-* 【未解决】自己编译出的arm64的frida-server能否在iPhone11正常运行
-* 【未解决】用frida源码自己编译出frida的iOS的包含frida-server的deb安装包
-* 【未解决】自己编译出包含arm64和arm64e的FAT格式的frida-server二进制
-* 【未解决】自己修改编译frida-core源码以尝试解决Frida的Missing gProcessInfo问题
-* 【未解决】Frida中如何编译出iOS的arm64e的frida-server二进制
-* 【未解决】自己编译Frida的frida-core代码生成可用二进制frida-server
-* 【已解决】iOS逆向：如何写Frida的Stalker代码去监控函数___lldb_unnamed_symbol2575$$akd的指令运行
-* 【未解决】iOS逆向：如何反代码混淆反混淆去混淆
-* 【未解决】Mac中Frida启动抖音app进程并调试和hook函数
-* 【未解决】用Frida的frida-trace去hook函数iOS版抖音
-* 【未解决】frida调试抖音app去hook函数：_dyld_get_image_name
-* 【未解决】frida去hook函数_dyld_get_image_name时打印参数为字符串
-* 【未解决】用Frida动态调试iOS版抖音app
-* 【未解决】Mac中用Frida调试iOS版抖音
-* 【已解决】用frida启动hook调试iOS抖音app
-* 【未解决】尝试Frida的stalker能否修复抖音AwemeCore中函数名常量字符串
-* 【记录】iOS逆向Apple账号：用frida和frida-trace去hook打印更多账号相关函数调用
 * 【无法解决】iOS逆向Apple账号：用frida的ssl bypyass脚本尝试解决Charles抓包代理报错
 * 【未解决】iOS逆向Apple账号：用Frida去监控NSURL去调试Apple账号登录过程
 * 【未解决】iOS逆向Apple账号：用Frida去调试NSURL核心网络请求函数调用
