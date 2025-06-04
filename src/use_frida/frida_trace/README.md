@@ -83,4 +83,4 @@
         frida-trace -p 1372 -a "libjpeg.so!0x4793c"
         ```
     * 详见
-      * [frida-trace的iOS的ObjC的举例](../../frida_example/frida_trace/ios_objc/README.md)
+      * [frida-trace的iOS的ObjC的举例](https://book.crifan.org/books/frida_re_example_function/website/frida_re_example/frida_trace/ios_objc/)

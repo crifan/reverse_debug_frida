@@ -12,3 +12,5 @@
     * [0xdea/frida-scripts](https://github.com/0xdea/frida-scripts)
     * [misc/frida-read-process-memory.py at master · poxyran/misc · GitHub](https://github.com/poxyran/misc/blob/master/frida-read-process-memory.py)
     * [frida-snippets/README.md at master · iddoeldor/frida-snippets · GitHub](https://github.com/iddoeldor/frida-snippets/blob/master/README.md)
+  * 独立教程
+    * [Frida逆向实例和工具函数](https://book.crifan.org/books/frida_re_example_function/website/)

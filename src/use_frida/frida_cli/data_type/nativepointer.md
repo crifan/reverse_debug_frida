@@ -81,7 +81,7 @@ Interceptor.attach(curMethod.implementation, {
 
 ### 用add计算函数地址
 
-[Stalker实例代码](../../../frida_example/frida/ios_objc/stalker/README.md) 中的
+[Stalker实例代码](https://book.crifan.org/books/frida_advanced_debug_stalker/website/stalker_examples/) 中的
 
 ```js
 var funcRelativeStartAddr = 0xa0460;

@@ -30,15 +30,12 @@
 * 【未解决】Frida从16.0.8到升级到新版本16.0.10
 * 【已解决】越狱后的iPhone11中卸载和重新安装Frida
 * 【已确认】iPhone11中重新确认新版XinaA和新版Frida是否可以正常使用
-* 【基本解决】Frida的Stalker.follow中events的含义和用法
 * 【已解决】优化Frida调用脚本时无需每次查看PID直接传入进程名
 * 【已解决】iOS逆向：frida调试hook类NSXPCConnection的setExportedObject
-* 【已解决】Frida中Stalker如何在Stalker.follow中写代码追踪指令代码运行
 * 【已解决】用frida去hook打印一个类的所有的方法
 * 【已解决】frida去hook函数时确保已执行函数但不触发不输出日志log
 * 【已解决】iOS逆向Apple账号：用frida打印com.apple.ak.auth.xpc的NSXPCConnection的其他属性值
 * 【记录】iOS逆向akd：frida-trace追踪出iPhone8中iOS15.0中账号验证的函数调用过程结果
-* 【已解决】Mac中如何使用frida的Stalker的js脚本
 * 【已解决】Frida调试时如何指定进程
 * 【已解决】Frida中如何通过frida启动被测app程序iOS版抖音
 * 【已解决】frida调试进程直接运行不要每次都输入%resume才运行
@@ -80,17 +77,6 @@
 * 【未解决】iPhone中用launchctl去启动和停止frida-server服务进程
 * 【未解决】frida导致iPhone重启：分析panic-full的ips是否和frida-server崩溃有关系
 * 【基本解决】iOS 15.1的iPhone11中frida-server所用架构是arm64e还是arm64
-* 【未解决】Frida的stalker trace
-* 【基本解决】Frida的Stalker.follow中events的含义和用法
-* 【已解决】Frida去hook函数报错：Error unable to intercept function at please file a bug
-* 【无法解决】Frida的Stalker中transform中的instruction是否可以获取到bytes即opcode
-* 【已解决】优化Frida的Stalker的代码追踪逻辑
-* 【已解决】Frida的Stalker中函数地址和指令地址匹配不上
-* 【已解决】搞懂Frida的Stalker.follow的transform的调试指令运行的逻辑
-* 【已解决】Frida的Stalker.follow中transform中的指令instruction
-* 【记录】分析Frida的Stalker对于___lldb_unnamed_symbol2575代码追踪的输出结果
-* 【记录】学习Frida官网文档Stalker搞懂基本用法和逻辑
-* 【已解决】Frida的Stalker中去判断是否是函数的代码指令的逻辑
 * 【整理】Frida中对于js代码的支持不够完美
 * 【无法解决】iOS逆向Apple账号：用frida的ssl bypyass脚本尝试解决Charles抓包代理报错
 * 【未解决】iOS逆向Apple账号：用Frida去监控NSURL去调试Apple账号登录过程
@@ -118,7 +104,6 @@
 * [使用Frida绕过iOS反调试 | La0s](https://la0s.github.io/2019/03/07/anti_ptrace/)
 * [一例简单的frida反调试绕过 - 网安](https://www.wangan.com/p/7fy78y0789a8c8ba)
 * [【iOS逆向】某营业厅算法分析_小陈_InfoQ写作社区](https://xie.infoq.cn/article/4c1fe5ca87269a7a5ac1645fc)
-* [[原创] sktrace：基于 Frida Stalker 的 trace 工具-Android安全-看雪-安全社区|安全招聘|kanxue.com](https://bbs.kanxue.com/thread-264680.htm)
 * [oleavr (Ole André Vadla Ravnås)](https://github.com/oleavr)
 * [Frida 12.3 Debuts New Crash Reporting Feature - NowSecure](https://www.nowsecure.com/blog/2019/02/07/frida-12-3-debuts-new-crash-reporting-feature/)
 * [【iOS逆向与安全】frida-trace入门 - 移动端小陈 - 博客园](https://www.cnblogs.com/witchan/p/16904169.html)
@@ -162,7 +147,6 @@
 * [Modes of Operation](https://frida.re/docs/modes/)
 * [Gadget](https://frida.re/docs/gadget/)
 * [Hacking](https://frida.re/docs/hacking/)
-* [Stalker](https://frida.re/docs/stalker/)
 * [Presentations](https://frida.re/docs/presentations/)
 * [Functions](https://frida.re/docs/functions/)
 * [Messages](https://frida.re/docs/messages/)
@@ -194,7 +178,6 @@
 * [History](https://frida.re/docs/history/)
 * [frida-presentations](https://github.com/frida/frida-presentations)
 * [【Frida 实战】API查找器和拦截器的组合使用 – exchen's blog](https://www.exchen.net/frida-apiresolver-interceptor.html)
-* [Stalker的API](https://frida.re/docs/javascript-api/#stalker)
 * [DefinitelyTyped/index.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/frida-gum/index.d.ts)
 * [Tampering and Reverse Engineering on iOS - OWASP MASTG (gitbook.io)](https://mobile-security.gitbook.io/mobile-security-testing-guide/ios-testing-guide/0x06c-reverse-engineering-and-tampering)
 * [Cesar Rodriguez | Personal blog (cmrodriguez.me)](https://cmrodriguez.me/blog/methods/)

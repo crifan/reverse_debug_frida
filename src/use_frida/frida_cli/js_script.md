@@ -47,7 +47,4 @@
     * > 如果有些情况需要批量 Hook，比如对某一个类的所有方法进行 Hook，或者对某个模块的特定名称的函数进行 Hook，可能我们并不知道准确的名称是什么，只知道大概的关键字，这种情况怎么 Hook 呢？这时就得使用 API查找器（ApiResolver）先把感兴趣函数给找出来，得到地址之后就能 Hook了
   * 举例：[ApiResolver](../../frida_example/frida/ios_objc/apiresolver/README.md)
 * `Stalker` = 跟踪器
-  * 效果：跟踪代码的实际运行的过程
-    * 期间可以打印和查看对应的值，便于实现调试真正代码运行的逻辑
-    * 详见：[Frida的Stalker](../../use_frida/frida_cli/frida_stalker.md)
-  * 举例：[Stalker](../../frida_example/frida/ios_objc/stalker/README.md)
+  * [Frida的Stalker](../../use_frida/frida_cli/frida_stalker.md)

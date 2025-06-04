@@ -20,7 +20,6 @@
   * 【未解决】用Frida动态调试iOS版抖音app
   * 【未解决】Mac中用Frida调试iOS版抖音
   * 【已解决】用frida启动hook调试iOS抖音app
-  * 【未解决】尝试Frida的stalker能否修复抖音AwemeCore中函数名常量字符串
 
 ## Apple账号 ~= AppleStore
 
